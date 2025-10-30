@@ -1,0 +1,45 @@
+{
+  "gallery": [
+    
+    {
+      "image": "assets/gallery/d.jpg",
+      "popup": "assets/gallery/d.jpg",
+      "width": "normal"
+    },
+    {
+      "image": "assets/gallery/f.jpg",
+      "popup": "assets/gallery/f.jpg",
+      "width": "normal"
+    },
+    {
+      "image": "assets/images/E.jpg",
+      "popup": "assets/images/E.jpg",
+      "width": "big"
+    },
+    {
+      "image": "assets/gallery/g.jpg",
+      "popup": "assets/gallery/g.jpg",
+      "width": "normal"
+    },
+    {
+      "image": "assets/gallery/j.jpg",
+      "popup": "assets/gallery/j.jpg",
+      "width": "normal"
+    },
+    {
+      "image": "assets/gallery/h.jpg",
+      "popup": "assets/gallery/h.jpg",
+      "width": "normal"
+    },
+    {
+      "image": "assets/images/conférence.jpg",
+      "popup": "assets/images/conférence.jpg",
+      "width": "normal"
+    },
+    {
+      "image": "assets/gallery/a.jpg",
+      "popup": "assets/gallery/a.jpg",
+      "width": "normal"
+    }
+  ]
+}

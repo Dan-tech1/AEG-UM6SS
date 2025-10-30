@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité - AEG-UM6SS</title>
+    <meta name="description" content="Politique de confidentialité de l'Association des Étudiants Gabonais de l'UM6SS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/carts.css">
+
+    <style>
+        /* ===== STYLES SPÉCIFIQUES POLITIQUE DE CONFIDENTIALITÉ ===== */
+
+.privacy-section {
+    background-color: var(--bg-light);
+}
+
+.privacy-content {
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    line-height: 1.8;
+}
+
+.privacy-item {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.privacy-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.privacy-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    position: relative;
+    padding-left: 20px;
+}
+
+.privacy-item h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+}
+
+.privacy-item p {
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.privacy-item ul {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+.privacy-item li {
+    margin-bottom: 12px;
+    color: var(--text-color);
+    position: relative;
+    padding-left: 15px;
+}
+
+.privacy-item li::before {
+    content: '▶';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-size: 12px;
+}
+
+.privacy-item strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.privacy-update {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid var(--border-color);
+    color: var(--text-light);
+    font-style: italic;
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Styles pour les sections importantes */
+.privacy-highlight {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #004d2a 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border-left: 5px solid var(--secondary-color);
+}
+
+.privacy-highlight h5 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.privacy-contact {
+    background: var(--bg-light);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+    margin: 20px 0;
+}
+
+.privacy-contact p {
+    margin-bottom: 8px;
+}
+
+/* Animation pour l'apparition */
+.privacy-item {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.privacy-item:nth-child(1) { animation-delay: 0.1s; }
+.privacy-item:nth-child(2) { animation-delay: 0.2s; }
+.privacy-item:nth-child(3) { animation-delay: 0.3s; }
+.privacy-item:nth-child(4) { animation-delay: 0.4s; }
+.privacy-item:nth-child(5) { animation-delay: 0.5s; }
+.privacy-item:nth-child(6) { animation-delay: 0.6s; }
+.privacy-item:nth-child(7) { animation-delay: 0.7s; }
+.privacy-item:nth-child(8) { animation-delay: 0.8s; }
+.privacy-item:nth-child(9) { animation-delay: 0.9s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .privacy-content {
+        padding: 30px 20px;
+        margin: 0 10px;
+    }
+    
+    .privacy-item h4 {
+        font-size: 18px;
+        padding-left: 15px;
+    }
+    
+    .privacy-item h4::before {
+        width: 6px;
+        height: 6px;
+    }
+    
+    .privacy-item {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+    }
+    
+    .privacy-highlight,
+    .privacy-contact {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .privacy-content {
+        padding: 20px 15px;
+    }
+    
+    .privacy-item h4 {
+        font-size: 16px;
+    }
+    
+    .privacy-item p {
+        font-size: 14px;
+    }
+    
+    .privacy-item ul {
+        padding-left: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- header section -->
+    <header class="header-section">
+        <div class="container">
+            <!-- logo -->
+            <a href="index.html" class="site-logo"><img src="img/logo.png" alt="AEG-UM6SS"></a>
+            <div class="nav-switch">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="header-info">
+                <div class="hf-item">
+                    <i class="fa fa-clock-o"></i>
+                    <p><span>Heures d'ouverture:</span>Lundi - Vendredi: 08h - 18h</p>
+                </div>
+                <div class="hf-item">
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>Notre adresse:</span>Université Mohammed VI des Sciences de la Santé, Casablanca</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header section end-->
+
+    <!-- Header section  -->
+    <nav class="nav-section">
+        <div class="container">
+            <div class="nav-right">
+                <a href=""><i class="fa fa-search"></i></a>
+                <a href=""><i class="fa fa-shopping-cart"></i></a>
+            </div>
+            <ul class="main-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="events.html">Événements</a></li>
+                <li><a href="activities.html">Activités</a></li>
+                <li><a href="blog.html">Actualités</a></li>
+                <li><a href="partenaires.html">Partenaires</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Header section end -->
+
+    <!-- Page info section -->
+    <section class="page-info-section set-bg" data-setbg="img/page-info-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <h2 class="text-center"></h2>
+                    <p class="text-center">Comment nous protégeons et utilisons vos données personnelles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Page info section end -->
+
+    <!-- Privacy Policy section -->
+    <section class="privacy-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="privacy-content">
+                        <div class="privacy-item">
+                            <h4>1. Collecte des Informations</h4>
+                            <p>Nous collectons les informations que vous nous fournissez volontairement lorsque vous :</p>
+                            <ul>
+                                <li>Remplissez un formulaire d'adhésion</li>
+                                <li>Vous inscrivez à nos événements</li>
+                                <li>Vous abonnez à notre newsletter</li>
+                                <li>Nous contactez via notre formulaire de contact</li>
+                            </ul>
+                        </div>
+
+                        <div class="privacy-item">
+                            <h4>2. Informations Collectées</h4>
+                            <p>Les informations que nous pouvons collecter incluent :</p>
+                            <ul>
+                                <li>Nom et prénom</li>
+                                <li>Adresse email</li>
+                                <li>Numéro de téléphone</li>
+                                <li>Année d'étude et filière</li>
+                                <li>Université d'origine</li>
+                            </ul>
+                        </div>
+
+                        <div class="privacy-item">
+                            <h4>3. Utilisation des Informations</h4>
+                            <p>Nous utilisons vos informations pour :</p>
+                            <ul>
+                                <li>Gérer votre adhésion à l'association</li>
+                                <li>Vous informer des événements et activités</li>
+                                <li>Vous envoyer notre newsletter</li>
+                                <li>Répondre à vos demandes</li>
+                                <li>Améliorer nos services</li>
+                            </ul>
+                        </div>
+
+                        <div class="privacy-item">
+                            <h4>4. Protection des Données</h4>
+                            <p>Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos informations contre tout accès non autorisé, altération, divulgation ou destruction.</p>
+                        </div>
+
+                        <div class="privacy-item">
+                            <h4>5. Partage des Informations</h4>
+                            <p>Nous ne vendons, n'échangeons ni ne louons vos informations personnelles à des tiers. Vos informations peuvent être partagées avec :</p>
+                            <ul>
+                                <li>Les membres du bureau pour la gestion associative</li>
+                                <li>Les autorités compétentes si requis par la loi</li>
+                            </ul>
+                        </div>
+
+                        <div class="privacy-item">
+                            <h4>6. Vos Droits</h4>
+                            <p>Conformément à la loi, vous disposez des droits suivants :</p>
+                            <ul>
+                                <li>Droit d'accès à vos données</li>
+                                <li>Droit de rectification</li>
+                                <li>Droit à l'effacement</li>
+                                <li>Droit à la limitation du traitement</li>
+                                <li>Droit d'opposition</li>
+                            </ul>
+                            <p>Pour exercer ces droits, contactez-nous à : <strong>contact@aeg-um6ss.ma</strong></p>
+                        </div>
+
+                        <div class="privacy-item">
+                            <h4>7. Cookies</h4>
+                            <p>Notre site utilise des cookies pour améliorer votre expérience utilisateur. Vous pouvez désactiver les cookies dans les paramètres de votre navigateur.</p>
+                        </div>
+
+                        <div class="privacy-item">
+                            <h4>8. Modifications de la Politique</h4>
+                            <p>Nous nous réservons le droit de modifier cette politique de confidentialité. Les modifications seront publiées sur cette page.</p>
+                        </div>
+
+                        <div class="privacy-item">
+                            <h4>9. Contact</h4>
+                            <p>Pour toute question concernant cette politique de confidentialité, contactez-nous :</p>
+                            <p><strong>Email :</strong> contact@aeg-um6ss.ma<br>
+                            <strong>Téléphone :</strong> (+212) 522 123 456<br>
+                            <strong>Adresse :</strong> Université Mohammed VI des Sciences de la Santé, Casablanca</p>
+                        </div>
+
+                        <div class="privacy-update">
+                            <p><em>Dernière mise à jour : 15 Octobre 2023</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Privacy Policy section end -->
+
+    <!-- Footer section -->
+    <footer class="footer-section">
+        <div class="container footer-top">
+            <div class="row">
+                <!-- widget -->
+                <div class="footer-widget">
+                    <div class="about-widget">
+                        <img src="/assets/images/aeg.jpg" alt="AEG-UM6SS">
+                        <p>L'Association des Étudiants Gabonais de l'UM6SS œuvre pour l'épanouissement académique, culturel et social de ses membres.</p>
+                        <div class="social pt-1">
+                            <a href=""><i class="fa fa-twitter-square"></i></a>
+                            <a href=""><i class="fa fa-facebook-square"></i></a>
+                            <a href=""><i class="fa fa-instagram"></i></a>
+                            <a href=""><i class="fa fa-linkedin-square"></i></a>
+                            <a href=""><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- widget -->
+                <div class="footer-widget">
+                    <h6 class="fw-title">LIENS UTILES</h6>
+                    <div class="dobule-link">
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="about.html">À propos</a></li>
+                            <li><a href="parteners.html">Partenaires</a></li>
+                            <li><a href="events.html">Événements</a></li>
+                            <li><a href="activities.html">Activités</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="terms.html">Politique de confidentialité</a></li>
+                            <li><a href="404.html">Conditions d'utilisation</a></li>
+                            <li><a href="404.html">Aide</a></li>
+                            <li><a href="404.html">FAQ</a></li>
+                            <li><a href="404.html">Plan du site</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- widget -->
+                <div class="col-sm-6 col-lg-3 footer-widget">
+                    <h6 class="fw-title">ARTICLES RÉCENTS</h6>
+                    <ul class="recent-post">
+                        <li>
+                            <p>Nouveau Bureau Élu pour<br>l'Année 2023-2024</p>
+                            <span><i class="fa fa-clock-o"></i>15 Oct 2023</span>
+                        </li>
+                        <li>
+                            <p>Partenariat avec l'Ambassade<br>du Gabon au Maroc</p>
+                            <span><i class="fa fa-clock-o"></i>05 Oct 2023</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- widget -->
+                <div class="col-sm-6 col-lg-3 footer-widget">
+                    <h6 class="fw-title">CONTACT</h6>
+                    <ul class="contact">
+                        <li><p><i class="fa fa-map-marker"></i> Université Mohammed VI des Sciences de la Santé, Casablanca</p></li>
+                        <li><p><i class="fa fa-phone"></i> (+212) 522 123 456</p></li>
+                        <li><p><i class="fa fa-envelope"></i> contact@aeg-um6ss.ma</p></li>
+                        <li><p><i class="fa fa-clock-o"></i> Lundi - Vendredi, 08:00 - 18:00</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2023 AEG-UM6SS - Tous droits réservés</p>
+                        <p>
+    <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+      <img alt="Licence Creative Commons" 
+           style="border-width:0; vertical-align:middle;" 
+           src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /> 
+    </a><br/>
+    Ce site est mis à disposition selon les termes de la 
+    <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+      Licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International
+    </a>.
+  </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer section end-->
+
+    <script src="js/main.js"></script>
+</body>
+</html>

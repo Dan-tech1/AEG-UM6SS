@@ -1,0 +1,364 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Soirée Culturelle Gabonaise",
+      "date": "2023-11-15",
+      "time": "19:00 - 22:00",
+      "location": "Campus UM6SS, Espace Événementiel",
+      "description": "Découverte des traditions gabonaises à travers la musique, la danse et la gastronomie.",
+      "image": "assets/images/E.jpg",
+      "category": "culture",
+      "price": "Gratuit",
+      "priceFor": "pour membres"
+    },
+    {
+      "id": 2,
+      "title": "Séance de Tutorat Collectif",
+      "date": "2023-11-22",
+      "time": "18:00 - 20:00",
+      "location": "Bibliothèque UM6SS, Salle d'étude 3",
+      "description": "Révision anatomie générale avec les étudiants des années supérieures.",
+      "image": "assets/images/E.jpg",
+      "category": "academique",
+      "price": "Gratuit",
+      "priceFor": "pour tous"
+    },
+    {
+      "id": 3,
+      "title": "Tournoi de Football Inter-associations",
+      "date": "2023-11-25",
+      "time": "14:00 - 18:00",
+      "location": "Stade Universitaire UM6SS",
+      "description": "Compétition amicale entre les différentes associations étudiantes de l'université.",
+      "image": "assets/",
+      "category": "sport",
+      "price": "50 DH",
+      "priceFor": "/participant"
+    },
+    {
+      "id": 4,
+      "title": "Atelier de Préparation aux Stages",
+      "date": "2025-11-30",
+      "time": "16:00 - 18:00",
+      "location": "Amphithéâtre B, UM6SS",
+      "description": "Conseils pour CV, lettre de motivation et préparation aux entretiens.",
+      "image": "assets/evenement/cv.jpg",
+      "category": "formation",
+      "price": "Gratuit",
+      "priceFor": "pour membres"
+    },
+    {
+      "id": 5,
+      "title": "Dîner de Cohésion Mensuel",
+      "date": "2023-12-05",
+      "time": "19:30 - 22:00",
+      "location": "Restaurant Universitaire",
+      "description": "Rencontre conviviale pour renforcer les liens entre les membres de l'association.",
+      "image": "assets/images/E.jpg",
+      "category": "social",
+      "price": "80 DH",
+      "priceFor": "/personne"
+    },
+    {
+      "id": 6,
+      "title": "Conférence Santé Publique Gabonaise",
+      "date": "2023-12-10",
+      "time": "17:00 - 19:00",
+      "location": "Amphithéâtre Principal",
+      "description": "Discussion sur les enjeux sanitaires au Gabon avec des experts du domaine.",
+      "image": "assets/images/E.jpg",
+      "category": "academique",
+      "price": "Gratuit",
+      "priceFor": "pour tous"
+    },
+    {
+      "id": 7,
+      "title": "Marathon Solidaire",
+      "date": "2023-12-15",
+      "time": "08:00 - 12:00",
+      "location": "Parc de la Ligue Arabe",
+      "description": "Course caritative pour soutenir des projets éducatifs au Gabon.",
+      "image": "assets/images/events/marathon.jpg",
+      "category": "sport",
+      "price": "30 DH",
+      "priceFor": "/participant"
+    }
+  ],
+  "blog": [
+    {
+      "id": 1,
+      "title": "Nouveau Bureau Élu pour l'Année 2023-2024",
+      "date": "2023-10-15",
+      "author": "Président AEG-UM6SS",
+      "summary": "L'assemblée générale a élu le nouveau bureau de l'association pour l'année académique 2023-2024. Félicitations à tous les membres...",
+      "content": "L'assemblée générale annuelle de l'AEG-UM6SS s'est tenue le 14 octobre 2023 avec une participation record de 65 membres. Après des élections démocratiques, le nouveau bureau a été élu pour l'année académique 2023-2024. Félicitations à tous les membres élus qui s'engagent à poursuivre la mission de l'association et à représenter au mieux les intérêts des étudiants gabonais.",
+      "image": "assets/evenement/SMART-AFRICA.jpg",
+      "category": "Vie Associative"
+    },
+    {
+      "id": 2,
+      "title": "Réussite Exceptionnelle aux Examens de Juin",
+      "date": "2023-09-20",
+      "author": "Responsable Académique",
+      "summary": "Félicitations à tous nos membres pour leurs excellents résultats aux examens de fin d'année. Le taux de réussite global dépasse...",
+      "content": "Les résultats des examens de juin 2023 viennent de tomber et nous sommes fiers d'annoncer que nos membres ont obtenu des résultats exceptionnels. Avec un taux de réussite global de 92%, nos étudiants démontrent une fois de plus leur engagement et leur excellence académique.",
+      "image": "assets/images/bobo.jpg",
+      "category": "Académique"
+    },
+    {
+      "id": 3,
+      "title": "Programme de Mentorat pour les Nouveaux Étudiants",
+      "date": "2023-09-10",
+      "author": "Vice-Présidente",
+      "summary": "Lancement officiel du programme de mentorat qui associe les étudiants des années supérieures avec les nouveaux arrivants pour...",
+      "content": "Nous lançons officiellement notre programme de mentorat pour l'année académique 2023-2024. Ce programme vise à faciliter l'intégration des nouveaux étudiants en les associant avec des mentors expérimentés des années supérieures.",
+      "image": "assets/images/bobo.jpg",
+      "category": "Vie Associative"
+    },
+    {
+      "id": 4,
+      "title": "Célébration du 17 Août : Fête Nationale du Gabon",
+      "date": "2023-08-20",
+      "author": "Responsable Culturel",
+      "summary": "Retour en images sur la magnifique célébration de la fête nationale gabonaise organisée sur le campus...",
+      "content": "L'AEG-UM6SS a organisé une célébration mémorable pour la fête nationale du Gabon le 17 août. Au programme : défilé en tenue traditionnelle, dégustation de plats gabonais et spectacle de danses traditionnelles.",
+      "image": "assets/images/bobo.jpg",
+      "category": "Culture"
+    },
+    {
+      "id": 5,
+      "title": "Tournoi Sportif Inter-Universités",
+      "date": "2023-07-15",
+      "author": "Responsable Sportif",
+      "summary": "Notre équipe de football s'est brillamment illustrée lors du tournoi inter-universités de Casablanca...",
+      "content": "L'équipe de football de l'AEG-UM6SS a remporté la troisième place du tournoi inter-universités de Casablanca. Félicitations à tous les joueurs pour leur performance et leur esprit sportif !",
+      "image": "assets/images/bobo.jpg",
+      "category": "Sport"
+    },
+    {
+      "id": 6,
+      "title": "Atelier de Développement Personnel",
+      "date": "2023-06-25",
+      "author": "Responsable Formation",
+      "summary": "Succès pour notre premier atelier de développement personnel consacré à la gestion du stress...",
+      "content": "L'association a organisé son premier atelier de développement personnel sur le thème de la gestion du stress et du temps. L'atelier a rassemblé 35 participants et a été animé par un coach professionnel.",
+      "image": "assets/images/bobo.jpg",
+      "category": "Formation"
+    }
+  ],
+  "team": [
+    {
+      "id": 1,
+      "name": "BOBO NGOMOKO WELL Espoir",
+      "position": "Président",
+      "image": "assets/images/bobo.jpg",
+      "description": "Licence 3 Orthophonie.",
+      "email": "wgnomoko@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "AKARE OBING Lyn Joseph",
+      "position": "Vice-Présidente",
+      "image": "assets/images/lyn.jpg",
+      "description": "Étudiante 1 ere année doctorat Nutrition Clinique.",
+      "email": "lynejoeobiang@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "NGOMBO ISSENDE Raphaely Daven",
+      "position": "Secrétaire Général & CH.des Affaires Exterieures",
+      "image": "assets/images/daven.jpg",
+      "description": "Étudiant Licence 3 Maintenance et Génie Biomedical.",
+      "email": "Issendedaven1@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "ELLIE NZE Patrice Freddy",
+      "position": "CH.des Affaires Académiques",
+      "image": "assets/images/fredy.jpg",
+      "description": "Étudiante 2 ème année Doctorat Sciences Biomedicales.",
+      "email": "Ellienzefreddy@gmail.com"
+    },
+    {
+      "id": 5,
+      "name": "NTSANI Gilveny D'orcelin",
+      "position": "CH.des Affaires Socio-Culturelles et CH.Adjoint à la communication",
+      "image": "assets/images/francais.jpg",
+      "description": "Étudiant en Licence 3 Réanimation et Anesthésie.",
+      "email": "dorcelintsani3.14@gmail.com"
+    },
+    {
+      "id": 6,
+      "name": "MENGUE PYSSAME Shékinah",
+      "position": "Trésorière",
+      "image": "assets/images/chéki.jpg",
+      "description": "Étudiante en Licence 3 Maintenance et Génie Biomedical.",
+      "email": "gracesheky@gmail.com"
+    },
+    {
+      "id": 7,
+      "name": "OYANE YOH Océane",
+      "position": "Commissaire aux Comptes",
+      "image": "assets/images/océane.jpg",
+      "description": "Étudiant en Master 2 Biotechnologie et Santé.",
+      "email": "oyaneoceane026@gmail.com"
+    },
+    {
+      "id": 8,
+      "name": "ELLA NEMBE Joel",
+      "position": "Sécretaire Général Adjoint et CH.Adjoint des Affaires Académiques",
+      "image": "assets/images/joel.jpg",
+      "description": "2 ème Année Médecine.",
+      "email": "enzonembe@gmail.com"
+    }
+
+  ],
+  "services": [
+    {
+      "id": 1,
+      "title": "Accueil et Intégration",
+      "description": "Nous facilitons l'arrivée et l'installation des nouveaux étudiants gabonais à Casablanca et à l'UM6SS.",
+      "icon": "assets/images/services/accueil.png"
+    },
+    {
+      "id": 2,
+      "title": "Soutien Académique",
+      "description": "Organisation de séances de tutorat, partage de ressources et accompagnement dans les études.",
+      "icon": "assets/images/services/academique.png"
+    },
+    {
+      "id": 3,
+      "title": "Assistance Administrative",
+      "description": "Aide pour les démarches administratives, renouvellement de titre de séjour et autres formalités.",
+      "icon": "assets/images/services/administratif.png"
+    },
+    {
+      "id": 4,
+      "title": "Activités Culturelles",
+      "description": "Promotion de la culture gabonaise à travers des événements, des célébrations et des rencontres.",
+      "icon": "assets/images/services/culture.png"
+    },
+    {
+      "id": 5,
+      "title": "Activités Sportives",
+      "description": "Organisation de tournois, entraînements et activités sportives pour le bien-être des membres.",
+      "icon": "assets/images/services/sport.png"
+    },
+    {
+      "id": 6,
+      "title": "Orientation Professionnelle",
+      "description": "Accompagnement pour les stages, l'insertion professionnelle et les projets de carrière.",
+      "icon": "assets/images/services/orientation.png"
+    },
+    {
+      "id": 7,
+      "title": "Réseau d'Entraide",
+      "description": "Mise en relation avec les anciens étudiants et création d'un réseau professionnel solide.",
+      "icon": "assets/images/services/reseau.png"
+    }
+  ],
+  "activities": [
+    {
+      "id": 1,
+      "title": "Soirées Culturelles",
+      "category": "culture",
+      "description": "Découverte et partage de la culture gabonaise à travers la musique, la danse et la gastronomie.",
+      "icon": "ti-gallery",
+      "frequency": "Mensuelle"
+    },
+    {
+      "id": 2,
+      "title": "Séances de Tutorat",
+      "category": "academique",
+      "description": "Soutien académique par les étudiants des années supérieures dans toutes les matières.",
+      "icon": "ti-write",
+      "frequency": "Hebdomadaire"
+    },
+    {
+      "id": 3,
+      "title": "Tournois de Football",
+      "category": "sport",
+      "description": "Compétitions amicales entre étudiants et avec d'autres associations.",
+      "icon": "ti-target",
+      "frequency": "Trimestrielle"
+    },
+    {
+      "id": 4,
+      "title": "Ateliers de Formation",
+      "category": "formation",
+      "description": "Ateliers pratiques sur des compétences transversales et développement personnel.",
+      "icon": "ti-bookmark-alt",
+      "frequency": "Bimestrielle"
+    },
+    {
+      "id": 5,
+      "title": "Conférences et Séminaires",
+      "category": "academique",
+      "description": "Rencontres avec des professionnels de santé et experts dans différents domaines.",
+      "icon": "ti-microphone-alt",
+      "frequency": "Mensuelle"
+    },
+    {
+      "id": 6,
+      "title": "Sorties Découverte",
+      "category": "social",
+      "description": "Exploration du Maroc et découverte de sa culture et de ses paysages.",
+      "icon": "ti-map-alt",
+      "frequency": "Trimestrielle"
+    },
+    {
+      "id": 7,
+      "title": "Actions Humanitaires",
+      "category": "social",
+      "description": "Participation à des projets solidaires et actions caritatives.",
+      "icon": "ti-heart",
+      "frequency": "Semestrielle"
+    }
+  ],
+  "partners": [
+     {
+      "id": 1,
+      "name": "UNIVERSITÉ MOHAMMED VI DES SCIENCES DE LA SANTÉ",
+      "logo": "assets/images/UNIVERSITY.jpg",
+      "description": "Université Mohammed VI des Sciences de la Santé"
+    },
+    {
+      "id": 2,
+      "name": "AMBASSADE HAUTE REPRÉSENTATION DE LA RÉPUBLIQUE GABONAISE PRÉS LE ROYAUME DU MAROC",
+      "logo": "assets/images/ambassade.jpg",
+      "description": "Université Mohammed VI des Sciences de la Santé"
+    },
+    {
+      "id": 3,
+      "name": "SMART AFRICA STUDENT",
+      "logo": "assets/images/logosmart.jpg",
+      "description": "Partenaire institutionnel pour le soutien aux étudiants gabonais"
+    }
+     
+
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "LEOUNDA OGNANA Bridget",
+      "promotion": "Médecine 2022",
+      "text": "Grâce à l'AEG-UM6SS, j'ai trouvé une véritable famille au Maroc. L'accompagnement académique et l'ambiance chaleureuse m'ont permis de m'épanouir pleinement.",
+      "image": "assets/gallery/briget.jpg"
+    },
+    {
+      "id": 2,
+      "name": "ETOUGHE Prunelle",
+      "promotion": "Pharmacie 2024",
+      "text": "L'AEG-UM6SS m'a beaucoup aidé sur le plan émotionnel. Grâce aux activités qu'elle organise et à l'ambiance bienveillante qu'elle entretient, j'ai pu sortir de ma zone de stress et retrouver un équilibre.",
+      "image": "assets/gallery/prunelle.jpg"
+    },
+    {
+      "id": 3,
+      "name": "OKOUMA Dolivia",
+      "promotion": "Maintenance et Génie Biomedical",
+      "text": "Membre actif depuis 3 ans, j'ai pu développer mon leadership et mon sens des responsabilités grâce aux différentes missions associatives.",
+      "image": "assets/gallery/dolivia.jpg"
+    }
+  ]
+}

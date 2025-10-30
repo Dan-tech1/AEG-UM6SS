@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partenaires - AEG-UM6SS</title>
+    <meta name="description" content="Découvrez nos partenaires institutionnels et associatifs">
+    <link href="/assets/images/aeg.jpg" rel="shortcut icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+        /* ===== STYLES PARTENAIRES AVEC DÉFILEMENT HORIZONTAL ===== */
+.partners-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+}
+
+.partners-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/images/um6ss.jpg');
+    background-size: cover;
+}
+
+.partners-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 40px 0;
+}
+
+.partners-scroll-wrapper {
+    display: flex;
+    gap: 50px;
+    animation: scrollPartners 30s linear infinite;
+    padding: 20px 0;
+}
+
+.partners-scroll-wrapper:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scrollPartners {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-350px * 7 - 50px * 7)); /* Largeur item * nombre + gap * nombre */
+    }
+}
+
+/* Duplication des items pour effet infini */
+.partners-scroll-wrapper::after {
+    content: '';
+    display: flex;
+    gap: 50px;
+}
+
+.partner-item {
+    flex: 0 0 350px;
+    background:whitesmoke;
+    border-radius: 25px;
+    padding: 50px 40px;
+    box-shadow: 
+        0 15px 40px rgba(0, 107, 60, 0.12),
+        0 8px 25px rgba(0, 0, 0, 0.08),
+        inset 0 2px 0 rgba(255, 255, 255, 0.9);
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 107, 61, 0.47);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.partner-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,rgba(0, 128, 0, 0.51), rgba(255, 255, 255, 0.6), transparent);
+    transition: left 0.7s ease;
+}
+
+.partner-item:hover::before {
+    left: 100%;
+}
+
+.partner-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, 
+        var(--primary-color), 
+        var(--secondary-color), 
+        var(--primary-color));
+    background-size: 200% 100%;
+    animation: shimmer 4s infinite linear;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.partner-item:hover {
+    transform: 
+        translateY(-12px) 
+        scale(1.05);
+    box-shadow: 
+        0 30px 60px rgba(0, 107, 60, 0.18),
+        0 20px 40px rgba(0, 0, 0, 0.12),
+        0 0 0 2px rgba(0, 107, 60, 0.08),
+        inset 0 3px 0 rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 107, 60, 0.25);
+}
+
+.partner-logo {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 35px;
+    position: relative;
+    z-index: 2;
+}
+
+.partner-logo::before {
+    content: '';
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: 50%;
+    opacity: 0.08;
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+.partner-item:hover .partner-logo::before {
+    transform: scale(1.3);
+    opacity: 0.12;
+}
+
+.partner-logo img {
+    width: 400px;
+    height: 200px;
+    object-fit: contain;
+    filter: 
+        grayscale(100%) 
+        contrast(0.7);
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 25px;
+    padding: 20px;
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    box-shadow: 
+        0 12px 35px rgba(0, 0, 0, 0.15),
+        inset 0 4px 8px rgba(255, 255, 255, 0.9),
+        inset 0 -4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.partner-item:hover .partner-logo img {
+    filter: 
+        grayscale(0%) 
+        contrast(1.15) 
+        brightness(1.08);
+    transform: 
+        scale(1.2);
+    box-shadow: 
+        0 20px 50px rgba(0, 107, 60, 0.25),
+        inset 0 6px 12px rgba(255, 255, 255, 0.95),
+        inset 0 -6px 12px rgba(0, 0, 0, 0.1);
+    animation: logoPulse 2s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+    0%, 100% { 
+        transform: scale(1.2); 
+        box-shadow: 
+            0 20px 50px rgba(0, 107, 60, 0.25),
+            inset 0 6px 12px rgba(255, 255, 255, 0.95),
+            inset 0 -6px 12px rgba(0, 0, 0, 0.1);
+    }
+    50% { 
+        transform: scale(1.25); 
+        box-shadow: 
+            0 25px 60px rgba(0, 107, 60, 0.35),
+            inset 0 8px 16px rgba(255, 255, 255, 1),
+            inset 0 -8px 16px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.partner-info {
+    position: relative;
+    z-index: 2;
+}
+
+.partner-info h4 {
+    color: var(--primary-color);
+    margin-bottom: 18px;
+    font-size: 24px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), #004d2a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 3px 6px rgba(0, 107, 60, 0.15);
+}
+
+.partner-info p {
+    color: var(--text-light);
+    margin-bottom: 30px;
+    line-height: 1.7;
+    font-size: 16px;
+    position: relative;
+    padding: 0 15px;
+    font-weight: 500;
+}
+
+.partner-info p::before {
+    content: '"';
+    font-size: 28px;
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    top: -12px;
+    opacity: 0.8;
+}
+
+.partner-info p::after {
+    content: '"';
+    font-size: 28px;
+    color: var(--secondary-color);
+    position: absolute;
+    right: 0;
+    bottom: -18px;
+    opacity: 0.8;
+}
+
+.partner-type {
+    display: inline-block;
+    background: #886e05;
+    color: var(--primary-color);
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    box-shadow: 
+        0 6px 20px rgba(252, 209, 22, 0.35),
+        inset 0 2px 0 rgba(255, 255, 255, 0.5);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-type::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transition: left 0.6s ease;
+}
+
+.partner-item:hover .partner-type::before {
+    left: 100%;
+}
+
+.partner-item:hover .partner-type {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 8px 25px rgba(252, 209, 22, 0.5),
+        inset 0 2px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Navigation arrows */
+.partners-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.partner-nav-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    pointer-events: all;
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+.partner-nav-btn:hover {
+    background: white;
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Section devenir partenaire */
+.become-partner-section {
+    background:  #003d22;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+.become-partner-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/evenement/cv.jpg');
+    background-size: cover;
+}
+
+.partner-benefits {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px 0;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background:rgba(0, 128, 0, 0.607);
+    padding: 25px 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.4s ease;
+    min-width: 280px;
+}
+
+.benefit-item:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.benefit-item i {
+    font-size: 28px;
+    color: var(--secondary-color);
+    transition: transform 0.4s ease;
+}
+
+.benefit-item:hover i {
+    transform: scale(1.3) rotate(5deg);
+}
+
+.benefit-item span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .partner-item {
+        flex: 0 0 320px;
+        padding: 40px 30px;
+    }
+    
+    .partner-logo img {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .partners-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .partners-scroll-wrapper {
+        gap: 30px;
+        animation-duration: 25s;
+    }
+    
+    .partner-item {
+        flex: 0 0 280px;
+        padding: 35px 25px;
+    }
+    
+    .partner-logo {
+        height: 150px;
+    }
+    
+    .partner-logo img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .partner-info h4 {
+        font-size: 22px;
+    }
+    
+    .partner-benefits {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    .benefit-item {
+        min-width: auto;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-section {
+        padding: 60px 0;
+    }
+    
+    .partner-item {
+        flex: 0 0 250px;
+        padding: 30px 20px;
+    }
+    
+    .partner-logo {
+        height: 130px;
+    }
+    
+    .partner-logo img {
+        width: 100px;
+        height: 100px;
+        padding: 15px;
+    }
+    
+    .partner-info h4 {
+        font-size: 20px;
+    }
+    
+    .partner-info p {
+        font-size: 15px;
+    }
+}
+
+/* ===== CARROUSEL BACKGROUND POUR PAGE PARTENAIRES ===== */
+.page-info-section[data-setbg="img/page-info-bg.jpg"] {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Cache l'image originale */
+.page-info-section[data-setbg="img/page-info-bg.jpg"]::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 107, 60, 0.7);
+    z-index: 1;
+}
+
+/* Carrousel en arrière-plan */
+.page-info-section[data-setbg="img/page-info-bg.jpg"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: partenairesCarousel 1s infinite;
+    z-index: 0;
+}
+
+/* Animation du carrousel avec 3 images */
+@keyframes partenairesCarousel {
+    0%, 33% {
+        background-image: url('/assets/evenement/basket.jpg');
+        opacity: 1;
+        transform: scale(1);
+    }
+    34%, 66% {
+        background-image: url('/assets/gallery/a.jpg');
+        opacity: 1;
+        transform: scale(1.02);
+    }
+    67%, 100% {
+        background-image: url('/assets/images/aeg.jpg');
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Assure que le contenu reste au-dessus */
+.page-info-section[data-setbg="img/page-info-bg.jpg"] .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Améliore la lisibilité du texte */
+.page-info-section[data-setbg="img/page-info-bg.jpg"] h2,
+.page-info-section[data-setbg="img/page-info-bg.jpg"] p {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Animation subtile pour le titre */
+.page-info-section[data-setbg="img/page-info-bg.jpg"] h2 {
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    from {
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+    to {
+        text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9),
+                     0 0 20px rgba(252, 209, 22, 0.4);
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- header section -->
+    <header class="header-section">
+        <div class="container">
+            <!-- logo -->
+            <a href="index.html" class="site-logo"><img src="/assets/images/aeg.jpg" alt="AEG-UM6SS"></a>
+            <div class="nav-switch">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="header-info">
+                <div class="hf-item">
+                    <i class="fa fa-clock-o"></i>
+                    <p><span>Heures d'ouverture:</span>Lundi - Vendredi: 08h - 18h</p>
+                </div>
+                <div class="hf-item">
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>Notre adresse:</span>Université Mohammed VI des Sciences de la Santé, Casablanca</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header section end-->
+
+    <!-- Header section  -->
+    <nav class="nav-section">
+        <div class="container">
+            <div class="nav-right">
+                <a href=""><i class="fa fa-fire"></i></a>
+                <a href=""><i class="fa fa-book"></i></a>
+            </div>
+            <ul class="main-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="events.html">Événements</a></li>
+                <li><a href="activities.html">Activités</a></li>
+                <li><a href="blog.html">Actualités</a></li>
+                <li class="active"><a href="partenaires.html">Partenaires</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Header section end -->
+
+    <!-- Page info section -->
+    <section class="page-info-section set-bg" data-setbg="img/page-info-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <h2 class="text-center"></h2>
+                    <p class="text-center">Découvrez les institutions et organisations qui nous soutiennent</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Page info section end -->
+
+    <!-- Partners section -->
+    <section class="partners-section spad">
+        <div class="container">
+            <div class="section-title text-center">
+                <h3>NOS PARTENAIRES STRATÉGIQUES</h3>
+                <p>Des collaborations solides pour un meilleur accompagnement des étudiants</p>
+            </div>
+            
+            <div class="partners-grid" id="partners-container">
+                <!-- Les partenaires seront chargés dynamiquement ici via JavaScript -->
+                <div class="loading-partners">
+                    <p>Chargement des partenaires...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Partners section end -->
+
+    <!-- Devenir partenaire section -->
+    <section class="become-partner-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center text-white">
+                    <h3>DEVENIR PARTENAIRE</h3>
+                    <p>Vous représentez une institution ou une organisation et souhaitez collaborer avec nous ? Rejoignez notre réseau de partenaires et participez à nos projets pour soutenir les étudiants gabonais.</p>
+                    <div class="partner-benefits">
+                        <div class="benefit-item">
+                            <i class="fa fa-users"></i>
+                            <span>Visibilité auprès de la communauté étudiante</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fa fa-handshake-o"></i>
+                            <span>Collaborations sur des projets communs</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fa fa-graduation-cap"></i>
+                            <span>Accès à des talents prometteurs</span>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="site-btn">NOUS CONTACTER</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Devenir partenaire section end -->
+
+    <!-- Footer section -->
+    <footer class="footer-section">
+        <div class="container footer-top">
+            <div class="row">
+                <!-- widget -->
+                <div class="col-sm-6 col-lg-3 footer-widget">
+                    <div class="about-widget">
+                        <img class="dt" src="assets/images/aeg.jpg" alt="AEG-UM6SS">
+                        <p>L'Association des Étudiants Gabonais de l'UM6SS œuvre pour l'épanouissement académique, culturel et social de ses membres.</p>
+                        <div class="social pt-1">
+                            <a href=""><i class="fa fa-twitter-square"></i></a>
+                            <a href=""><i class="fa fa-facebook-square"></i></a>
+                            <a href=""><i class="fa fa-instagram"></i></a>
+                            <a href=""><i class="fa fa-linkedin-square"></i></a>
+                            <a href=""><i class="fa fa-youtube-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- widget -->
+                <div class="col-sm-6 col-lg-3 footer-widget">
+                    <h6 class="fw-title">LIENS UTILES</h6>
+                    <div class="dobule-link">
+                        <ul>
+                            <li><a href="index.html">Accueil</a></li>
+                            <li><a href="about.html">À propos</a></li>
+                            <li><a href="activities.html">Activités</a></li>
+                            <li><a href="events.html">Événements</a></li>
+                            <li><a href="blog.html">Actualités</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+                            <li><a href="conditions.html">Conditions d'utilisation</a></li>
+                            <li><a href="partenaires.html">Partenaires</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- widget -->
+                <div class="col-sm-6 col-lg-3 footer-widget">
+                    <h6 class="fw-title">ARTICLES RÉCENTS</h6>
+                    <ul class="recent-post">
+                        <li>
+                            <p>Nouveau Bureau Élu pour<br>l'Année 2023-2024</p>
+                            <span><i class="fa fa-clock-o"></i>15 Oct 2023</span>
+                        </li>
+                        <li>
+                            <p>Partenariat avec l'Ambassade<br>du Gabon au Maroc</p>
+                            <span><i class="fa fa-clock-o"></i>05 Oct 2023</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- widget -->
+                <div class="col-sm-6 col-lg-3 footer-widget">
+                    <h6 class="fw-title">CONTACT</h6>
+                    <ul class="contact">
+                        <li><p><i class="fa fa-map-marker"></i> Université Mohammed VI des Sciences de la Santé, Casablanca</p></li>
+                        <li><p><i class="fa fa-phone"></i> (+212) 522 123 456</p></li>
+                        <li><p><i class="fa fa-envelope"></i> contact@aeg-um6ss.ma</p></li>
+                        <li><p><i class="fa fa-clock-o"></i> Lundi - Vendredi, 08:00 - 18:00</p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2023 AEG-UM6SS - Tous droits réservés</p>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <p>Développé avec ❤️ pour la communauté étudiante gabonaise</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer section end-->
+
+    <script src="js/main.js"></script>
+    <script src="js/partners.js"></script>
+</body>
+</html>
