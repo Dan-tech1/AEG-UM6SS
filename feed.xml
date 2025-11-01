@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>AEG-UM6SS - Actualités et Événements</title>
+    <link>https://aeg-um6ss.online/</link>
+    <description>Dernières nouvelles de l'Association des Étudiants Gabonais de l'UM6SS</description>
+    <language>fr-fr</language>
+    <copyright>© 2025 AEG-UM6SS</copyright>
+
+    <item>
+      <title>Bienvenue sur le site officiel de l’AEG-UM6SS</title>
+      <link>https://aeg-um6ss.online/</link>
+      <description>Découvrez les activités, événements et projets de l’association des étudiants gabonais de l’UM6SS.</description>
+      <pubDate>Fri, 31 Oct 2025 18:00:00 +0100</pubDate>
+    </item>
+
+    <!-- Tu pourras ajouter d’autres <item> pour chaque nouvel article -->
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+{
+  "name": "AEG-UM6SS",
+  "short_name": "AEG-UM6SS",
+  "description": "Association des Étudiants Gabonais de l'Université Mohammed VI des Sciences de la Santé.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a6fb3",
+  "icons": [
+    {
+      "src": "/assets/images/aeg.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/aeg.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "lang": "fr-FR",
+  "scope": "/"
+}
