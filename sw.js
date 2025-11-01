@@ -1,22 +1,24 @@
 // Service Worker pour la mise en cache
-const CACHE_NAME = 'aeg-um6ss-v1';
+const CACHE_NAME = 'aeg-um6ss-v2';
 const urlsToCache = [
     '/',
     '/index.html',
     '/about.html',
     '/events.html',
-    '/activities.html',
+    '/blog.html',
     '/blog.html',
     '/contact.html',
     '/404.html',
+    'partenaires.html',
     '/css/style.css',
     '/js/main.js',
-    '/js/registration.js',
-    '/js/utils.js',
+    '/js/gallery.js',
     '/data/data.json',
-    '/img/logo.png',
-    '/img/logo-light.png',
-    '/img/favicon.ico'
+    '/assets/images/aeg.jpg',
+    'feed.xml',
+    'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js',
+    'openscearch.xml'
 ];
 
 self.addEventListener('install', event => {
