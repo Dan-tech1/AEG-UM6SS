@@ -1,0 +1,13 @@
+# robots.txt pour AEG-UM6SS
+
+User-agent: *
+# Autoriser tous les robots à explorer toutes les pages sauf les pages sensibles
+Disallow: /admin/
+Disallow: /private/
+Disallow: /404.html
+
+# Laisser tout le reste indexable
+Allow: /
+
+# Emplacement du sitemap
+Sitemap: https://aeg-um6ss.online/sitemap.xml
