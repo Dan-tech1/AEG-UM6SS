@@ -321,19 +321,19 @@
       "id": 1,
       "name": "UNIVERSITÉ MOHAMMED VI DES SCIENCES DE LA SANTÉ",
       "logo": "assets/images/UNIVERSITY.jpg",
-      "description": "Université Mohammed VI des Sciences de la Santé"
+      "description": "Tel: +212 05 29 08 91 02 / Tel Admission: +212 05 29 08 91 97 / mail: informations@um6ss.ma"
     },
     {
       "id": 2,
       "name": "AMBASSADE HAUTE REPRÉSENTATION DE LA RÉPUBLIQUE GABONAISE PRÉS LE ROYAUME DU MAROC",
       "logo": "assets/images/ambassade.jpg",
-      "description": "Université Mohammed VI des Sciences de la Santé"
+      "description": "Tel:(537) 75 19 50 / Mail: ambagabon@menara.ma"
     },
     {
       "id": 3,
       "name": "SMART AFRICA STUDENT",
       "logo": "assets/images/logosmart.jpg",
-      "description": "Partenaire institutionnel pour le soutien aux étudiants gabonais"
+      "description": "Tel :+212 66 23 12 228 / Mail: Zone3@smartafrica-consulting.ma"
     }
      
 
@@ -342,7 +342,7 @@
     {
       "id": 1,
       "name": "LEOUNDA OGNANA Bridget",
-      "promotion": "Médecine 2022",
+      "promotion": "Médecine 2024",
       "text": "Grâce à l'AEG-UM6SS, j'ai trouvé une véritable famille au Maroc. L'accompagnement académique et l'ambiance chaleureuse m'ont permis de m'épanouir pleinement.",
       "image": "assets/gallery/briget.jpg"
     },
@@ -356,8 +356,8 @@
     {
       "id": 3,
       "name": "OKOUMA Dolivia",
-      "promotion": "Maintenance et Génie Biomedical",
-      "text": "Membre actif depuis 3 ans, j'ai pu développer mon leadership et mon sens des responsabilités grâce aux différentes missions associatives.",
+      "promotion": "Maintenance et Génie Biomedical 2023",
+      "text": "Etant membre du groupe de danse GABAO DANCE UM6SS, j'ai pu contribuer fierement au rayonnement du Vert-Jaune-Bleu et me construire un autre souvenir inoubliable.",
       "image": "assets/gallery/dolivia.jpg"
     }
   ]
