@@ -21,7 +21,7 @@
       "description": "10 années d'excellence,ça se fête.",
       "image": "assets/images/E.jpg",
       "category": "Culture",
-      "price": "Gratuit ",
+      "price": "termné",
       "priceFor": "pour tous "
     },
     {
@@ -33,7 +33,7 @@
       "description": "C'est avec une immensense joie que nous consacrerons la journée du samedi 23 novembre aux nouveaux étudiants Gabonais de notre bien-aimée université. On se donne ainsi rendez-vous pour des moments de convivialité à partager tous ensemble.",
       "image": "assets/evenement/E3.jpg",
       "category": "Vie Associative",
-      "price": "gratuit",
+      "price": "terminé",
       "priceFor": "/participant"
     }
   ],
