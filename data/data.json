@@ -82,7 +82,7 @@
   "team": [
     {
       "id": 1,
-      "name": "BOBO NGOMOKO WELL Espoir",
+      "name": "BOBO GNOMOKO WELL Espoir",
       "position": "Président",
       "image": "assets/images/bobo.jpg",
       "description": "Licence 3 Orthophonie.",
@@ -90,7 +90,7 @@
     },
     {
       "id": 2,
-      "name": "AKARE OBING Lyn Joseph",
+      "name": "AKARE OBIANG Lyn Joseph",
       "position": "Vice-Présidente",
       "image": "assets/images/lyn.jpg",
       "description": "Étudiante 1 ere année doctorat Nutrition Clinique.",

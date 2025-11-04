@@ -305,6 +305,36 @@
         </div>
     </footer>
 
+    <script>
+// Désactiver le clic droit
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+  alert("⚠️ vous n'avez aucuns droit sur ce site.");
+});
+
+// Désactiver certaines touches (F12, Ctrl+Shift+I, Ctrl+U, etc.)
+document.addEventListener("keydown", function (e) {
+  // Empêcher F12
+  if (e.key === "F12") {
+    e.preventDefault();
+  }
+  // Empêcher Ctrl+Shift+I (inspecter), Ctrl+Shift+J (console), Ctrl+U (code source)
+  if (e.ctrlKey && (e.shiftKey && ["I", "J"].includes(e.key.toUpperCase()) || e.key.toUpperCase() === "U")) {
+    e.preventDefault();
+  }
+});
+
+// Désactiver le glisser-déposer, la sélection et le copier-coller
+document.addEventListener("dragstart", e => e.preventDefault());
+document.addEventListener("selectstart", e => e.preventDefault());
+document.addEventListener("copy", e => {
+  e.preventDefault();
+  alert("📋 vous n'avez aucuns droit sur ce site.");
+});
+document.addEventListener("cut", e => e.preventDefault());
+document.addEventListener("paste", e => e.preventDefault());
+</script>
+
     <script src="js/main.js"></script>
     <script src="js/activities.js"></script><script src="js/js/gallery-simple.js"></script>
 
