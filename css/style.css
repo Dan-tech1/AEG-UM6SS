@@ -2489,7 +2489,7 @@ textarea:focus {
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        background: linear-gradient(135deg,#1e88e5,#0d47a1);
+        background: linear-gradient(135deg,#76e165,#0a3d05);
         color: #fff;
         display:flex;
         align-items:center;
@@ -2504,7 +2504,7 @@ textarea:focus {
         width: 330px;
         max-width: calc(100vw - 40px);
         height: 480px;
-        background: #fff;
+        background: #ffffff67;
         box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         border-radius: 12px;
         overflow: hidden;
@@ -2514,7 +2514,7 @@ textarea:focus {
 
     /* Header */
     #aeg-chat-header {
-        background: linear-gradient(135deg,#1e88e5,#0d47a1);
+        background: linear-gradient(135deg,#035a19,#053402);
         color: #fff;
         padding: 12px;
         display:flex;
@@ -2529,7 +2529,7 @@ textarea:focus {
         padding: 12px;
         height: calc(100% - 120px);
         overflow-y: auto;
-        background: #f7f9fc;
+        background: #054712d2;
     }
     .aeg-msg { margin-bottom: 10px; max-width: 85%; padding: 8px 10px; border-radius: 8px; line-height:1.3; }
     .aeg-msg.user { background: #e8f1ff; margin-left: auto; text-align:right; }
@@ -2551,7 +2551,7 @@ textarea:focus {
         outline: none;
     }
     #aeg-chat-send {
-        background:#1e88e5;
+        background:#134402;
         color:#fff;
         border:none;
         padding:8px 12px;
@@ -2565,7 +2565,7 @@ textarea:focus {
         padding:6px 10px;
         margin-top:8px;
         border-radius:16px;
-        background:#0d47a1;
+        background:#1b6e05;
         color:#fff;
         text-decoration:none;
         cursor:pointer;
@@ -2580,10 +2580,103 @@ textarea:focus {
     #aeg-enroll input, #aeg-enroll textarea, #aeg-enroll select {
         width:100%; padding:8px; margin-bottom:8px; border:1px solid #ddd; border-radius:6px;
     }
-    #aeg-enroll button { background:#0d47a1; color:#fff; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; }
+    #aeg-enroll button { background:#03cf21; color:#fff; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; }
 
     /* Small responsive tweak */
     @media (max-width:420px){
         #aeg-chat-window{ width: 92vw; height: 60vh; }
         #aeg-chat-toggle { width:54px; height:54px; }
+    }
+    
+    /* Responsive tweaks for chatbot on small screens — keep left position unchanged */
+    @media (max-width: 420px) {
+      #aeg-chatbot {
+        /* keep the same left value to preserve position on the left side */
+        left: 20px;
+        bottom: 16px;
+        z-index: 9999;
+      }
+
+      /* Make chat window more compact and fit the viewport while remaining left-aligned */
+      #aeg-chat-window {
+        display: none; /* controlled by JS; keep hidden by default */
+        width: calc(100vw - 40px);
+        max-width: calc(100vw - 40px);
+        height: 56vh;
+        border-radius: 10px;
+        margin-bottom: 8px;
+        overflow: hidden;
+      }
+
+      #aeg-chat-header {
+        padding: 10px;
+        font-size: 13px;
+      }
+
+      #aeg-chat-body {
+        padding: 10px;
+        height: calc(100% - 108px);
+        background: #054712d2;
+      }
+
+      .aeg-msg {
+        max-width: 80%;
+        font-size: 14px;
+        padding: 6px 8px;
+      }
+
+      .aeg-msg.user {
+        margin-left: auto;
+      }
+
+      #aeg-chat-footer {
+        padding: 6px;
+        gap: 6px;
+      }
+
+      #aeg-chat-input {
+        padding: 8px 10px;
+        font-size: 14px;
+        border-radius: 18px;
+      }
+
+      #aeg-chat-send {
+        padding: 6px 10px;
+        border-radius: 16px;
+        font-size: 13px;
+      }
+
+      #aeg-chat-toggle {
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+      }
+
+      /* Enrollment form inputs smaller */
+      #aeg-enroll {
+        padding: 10px;
+      }
+      #aeg-enroll input, #aeg-enroll textarea, #aeg-enroll select {
+        padding: 8px;
+        font-size: 14px;
+      }
+
+      /* ensure toast and other fixed elements do not overlap badly */
+      .toast-container { right: 20px; left: auto; }
+
+      /* keep left position authoritative (avoid accidental overrides) */
+      #aeg-chatbot, #aeg-chat-toggle, #aeg-chat-window { left: 20px !important; }
+    }
+
+    /* Extra tiny screens */
+    @media (max-width: 320px) {
+      #aeg-chat-window {
+        height: 62vh;
+        width: calc(100vw - 34px);
+        max-width: calc(100vw - 34px);
+      }
+
+      #aeg-chat-body { height: calc(100% - 104px); }
+      .aeg-msg { font-size: 13px; }
+      #aeg-chat-toggle { width: 50px; height: 50px; }
     }
