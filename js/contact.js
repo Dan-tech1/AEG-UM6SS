@@ -1,75 +1,13 @@
-// Script pour la page Contact
-document.addEventListener('DOMContentLoaded', function() {
-    initContactForm();
-});
-
-function initContactForm() {
-    const contactForm = document.getElementById('contact-form');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Validation des champs
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            if (!name || !email || !subject || !message) {
-                showNotification('Veuillez remplir tous les champs obligatoires.', 'error');
-                return;
-            }
-            
-            if (!validateEmail(email)) {
-                showNotification('Veuillez entrer une adresse email valide.', 'error');
-                return;
-            }
-            
-            // Simulation d'envoi
-            showNotification('Votre message a été envoyé avec succès! Nous vous répondrons dans les plus brefs délais.', 'success');
-            
-            // Réinitialisation du formulaire
-            contactForm.reset();
-        });
-    }
-}
-
-function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
-
-function showNotification(message, type) {
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.textContent = message;
-    notification.style.cssText = `
+function initContactForm(){let e=document.getElementById("contact-form");e&&e.addEventListener("submit",function(t){t.preventDefault();let n=document.getElementById("name").value,s=document.getElementById("email").value,a=document.getElementById("subject").value,o=document.getElementById("message").value;if(!n||!s||!a||!o){showNotification("Veuillez remplir tous les champs obligatoires.","error");return}if(!validateEmail(s)){showNotification("Veuillez entrer une adresse email valide.","error");return}showNotification("Votre message a \xe9t\xe9 envoy\xe9 avec succ\xe8s! Nous vous r\xe9pondrons dans les plus brefs d\xe9lais.","success"),e.reset()})}function validateEmail(e){return/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)}function showNotification(e,t){let n=document.createElement("div");n.className=`notification ${t}`,n.textContent=e,n.style.cssText=`
         position: fixed;
         top: 20px;
         right: 20px;
         padding: 15px 20px;
-        background: ${type === 'success' ? '#006B3C' : '#d9534f'};
+        background: ${"success"===t?"#006B3C":"#d9534f"};
         color: white;
         border-radius: 5px;
         z-index: 10000;
         box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         transform: translateX(100%);
         transition: transform 0.3s ease;
-    `;
-    
-    document.body.appendChild(notification);
-    
-    setTimeout(() => {
-        notification.style.transform = 'translateX(0)';
-    }, 100);
-    
-    setTimeout(() => {
-        notification.style.transform = 'translateX(100%)';
-        setTimeout(() => {
-            if (notification.parentNode) {
-                document.body.removeChild(notification);
-            }
-        }, 300);
-    }, 5000);
-}
+    `,document.body.appendChild(n),setTimeout(()=>{n.style.transform="translateX(0)"},100),setTimeout(()=>{n.style.transform="translateX(100%)",setTimeout(()=>{n.parentNode&&document.body.removeChild(n)},300)},5e3)}document.addEventListener("DOMContentLoaded",function(){initContactForm()});
