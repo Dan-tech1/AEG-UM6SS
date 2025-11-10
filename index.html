@@ -159,7 +159,7 @@
     <!-- Hero section -->
     <section class="hero-section">
         <div class="hero-slider owl-carousel">
-            <div class="hs-item set-bg" data-setbg="img/hero-slider/1.jpg">
+            <div class="hs-item set-bg" data-setbg="img/hero-slider/1.jpg" loading="lazy">
                 <div class="hs-text">
                     <div class="container">
                         <div class="row">
@@ -892,6 +892,23 @@ document.addEventListener("copy", e => {
 document.addEventListener("cut", e => e.preventDefault());
 document.addEventListener("paste", e => e.preventDefault());
 </script>
+
+<!-- Popup de maintenance -->
+<div id="maintenance-popup">
+  <div class="popup-content">
+    <h1>🚧 Site en maintenance 🚧</h1>
+    <p>Notre site est actuellement en maintenance et sera à nouveau disponible dans quelques heures.</p>
+    <p>Merci de votre patience et à très bientôt !</p>
+  </div>
+</div>
+
+<script>
+  // Affiche le popup dès le chargement de la page
+  window.addEventListener("load", function() {
+    document.getElementById("maintenance-popup").style.display = "flex";
+  });
+</script>
+
 
 </body>
 </html>
