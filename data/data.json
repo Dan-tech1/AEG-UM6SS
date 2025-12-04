@@ -3,11 +3,11 @@
     {
       "id": 1,
       "title": "Organisation de la 3 ème édition de la journée d'intégration",
-      "date": "Bientot",
+      "date": "Samedi 06 Dec 2025",
       "time": "...",
-      "location": "UM6SS Casablanca,Campusa Anfa City 1",
-      "description": "Comme il est de coutume, nows douhaitons chaleureusement la bienvenue aux noweaux étudiants Gabonais de l'umgos.",
-      "image": "assets/evenement/evene.jpg",
+      "location": "UM6SS Casablanca,Campus Anfa City 1",
+      "description": "Comme il est de coutume, nous souhaitons chaleureusement la bienvenue aux nouveaux étudiants Gabonais de l'UM6SS.",
+      "image": "assets/evenement/e4.jpg",
       "category": "Vie Associative",
       "price": "Gratuit",
       "priceFor": "pour tous"
@@ -73,7 +73,7 @@
       "title": "Présentation du nouveau bureau exécutif à Son Excellence Monsieur l’Ambassadeur",
       "date": "2025-10-23",
       "author": "communication",
-      "summary": "Une délégation de l’Association des Étudiants Gabonais de l’Université Mohammed VI des Sciences de la Santé (AEG-UM6SS) s’est rendue à Rabat, où elle a été reçue en audience par Son Excellence Monsieur l’Ambassadeur du Gabon Monsieur Branly Martial OUPOLO.Cette rencontre s’inscrit dans le cadre de la présentation des membres du nouveau bureau exécutif ainsi que de la feuille de route de l’association pour le mandat en cours, orientée vers le renforcement de l’excellence académique et de la formation dans le domaine de la santé.Les échanges, empreints de cordialité, d’ouverture et de respect mutuel, ont permis d’identifier des axes de convergence et d’envisager des perspectives de coopération académique, sanitaire et socioculturelle prometteuses, en lien avec la formation et l’engagement des étudiants gabonais dans le secteur de la santé.Son Excellence Monsieur l'Ambassadeur nous a également partagé sa vision, notamment :L’organisation d’une grande caravane médicale au Gabon ou au Maroc par les étudiants du corps médical de notre diaspora ; Une collaboration avec les etudiants en médecine de l'Université Mohammed VI des Sciences et de la Santé et celles des autres universités de médecines comme Abdulcasis ;L’AEG-UM6SS tient à exprimer sa profonde gratitude à Son Excellence Monsieur l’Ambassadeur du Gabon pour son accueil chaleureux, sa disponibilité et son écoute attentive, qui témoignent de son engagement en faveur du dialogue, du partenariat et du rayonnement de la jeunesse gabonaise dans le domaine de la santé.",
+      "summary": "Une délégation de l’Association des Étudiants Gabonais de l’Université Mohammed VI des Sciences et de la Santé (AEG-UM6SS) s’est rendue à Rabat, où elle a été reçue en audience par Son Excellence Monsieur l’Ambassadeur du Gabon Monsieur Branly Martial OUPOLO.Cette rencontre s’inscrit dans le cadre de la présentation des membres du nouveau bureau exécutif ainsi que de la feuille de route de l’association pour le mandat en cours, orientée vers le renforcement de l’excellence académique et de la formation dans le domaine de la santé.Les échanges, empreints de cordialité, d’ouverture et de respect mutuel, ont permis d’identifier des axes de convergence et d’envisager des perspectives de coopération académique, sanitaire et socioculturelle prometteuses, en lien avec la formation et l’engagement des étudiants gabonais dans le secteur de la santé.Son Excellence Monsieur l'Ambassadeur nous a également partagé sa vision, notamment :L’organisation d’une grande caravane médicale au Gabon ou au Maroc par les étudiants du corps médical de notre diaspora ; Une collaboration avec les etudiants en médecine de l'Université Mohammed VI des Sciences et de la Santé et celles des autres universités de médecines comme Abdulcasis ;L’AEG-UM6SS tient à exprimer sa profonde gratitude à Son Excellence Monsieur l’Ambassadeur du Gabon pour son accueil chaleureux, sa disponibilité et son écoute attentive, qui témoignent de son engagement en faveur du dialogue, du partenariat et du rayonnement de la jeunesse gabonaise dans le domaine de la santé.",
       "content": "L'AEG-UM6SS a organisé une célébration mémorable pour la fête nationale du Gabon le 17 août. Au programme : défilé en tenue traditionnelle, dégustation de plats gabonais et spectacle de danses traditionnelles.",
       "image": "assets/actuality/p3.jpg",
       "category": "Vie Associative"
@@ -85,7 +85,7 @@
       "name": "BOBO GNOMOKO WELL Espoir",
       "position": "Président",
       "image": "assets/images/bobo.jpg",
-      "description": "Licence 3 Orthophonie.",
+      "description": "Étudiant Licence 3 Orthophonie.",
       "email": "wgnomoko@gmail.com"
     },
     {
@@ -93,15 +93,15 @@
       "name": "AKARE OBIANG Lyn Joseph",
       "position": "Vice-Présidente",
       "image": "assets/images/lyn.jpg",
-      "description": "Étudiante 1 ere année doctorat Nutrition Clinique.",
+      "description": "Étudiante 1ère année doctorat Nutrition Clinique.",
       "email": "lynejoeobiang@gmail.com"
     },
     {
       "id": 3,
       "name": "NGOMBO ISSENDE Raphaely Daven",
-      "position": "Secrétaire Général & CH.des Affaires Exterieures",
+      "position": "Secrétaire Général & CH.des Affaires Extérieures",
       "image": "assets/images/daven.jpg",
-      "description": "Étudiant Licence 3 Maintenance et Génie Biomedical.",
+      "description": "Étudiant Licence 3 Maintenance et Génie Biomédical.",
       "email": "Issendedaven1@gmail.com"
     },
     {
@@ -109,7 +109,7 @@
       "name": "ELLIE NZE Patrice Freddy",
       "position": "CH.des Affaires Académiques",
       "image": "assets/images/fredy.jpg",
-      "description": "Étudiante 2 ème année Doctorat Sciences Biomedicales.",
+      "description": "Étudiant 2 ème année Doctorat Sciences Biomédicales.",
       "email": "Ellienzefreddy@gmail.com"
     },
     {
@@ -133,7 +133,7 @@
       "name": "OYANE YOH Océane",
       "position": "Commissaire aux Comptes",
       "image": "assets/images/océane.jpg",
-      "description": "Étudiant en Master 2 Biotechnologie et Santé.",
+      "description": "Étudiante en Master 2 Biotechnologie et Santé.",
       "email": "oyaneoceane026@gmail.com"
     },
     {
@@ -251,7 +251,7 @@
   "partners": [
      {
       "id": 1,
-      "name": "UNIVERSITÉ MOHAMMED VI DES SCIENCES DE LA SANTÉ",
+      "name": "UNIVERSITÉ MOHAMMED VI DES SCIENCES ET DE LA SANTÉ",
       "logo": "assets/images/UNIVERSITY.jpg",
       "description": "Tel: +212 05 29 08 91 02 / Tel Admission: +212 05 29 08 91 97 / mail: informations@um6ss.ma"
     },
