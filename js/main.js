@@ -65,7 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const distance = eventDate - now;
             
             if (distance < 0) {
-                countdownElement.innerHTML = '<div class="counter-item"><h4>Prochain évènement</h4></div>';
+                countdownElement.innerHTML = '<div class="counter-item"><h4>Prochain événement</h4></div>';
+                countdownElement.style.fontSize = '16px';
                 return;
             }
             
