@@ -45,12 +45,12 @@
 <meta name="twitter:site" content="@aeg_um6ss" />
 
 <!-- Sitemap & Flux -->
-<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" />
-<link rel="alternate" type="application/rss+xml" title="AEG-UM6SS - Flux RSS" href="/feed.xml" />
-<link rel="manifest" href="/site.webmanifest" />
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch.xml" />
+<link rel="alternate" type="application/rss+xml" title="AEG-UM6SS - Flux RSS" href="feed.xml" />
+<link rel="manifest" href="site.webmanifest" />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
 
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#025d22">
 
 
@@ -105,7 +105,6 @@
 <!-- Styles -->
 <link rel="stylesheet" href="css/style.css"/>
 <link rel="stylesheet" href="css/carts.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -118,7 +117,7 @@
     <header class="header-section">
         <div class="container">
             <!-- logo -->
-            <a href="index.html" class="site-logo"><img src="/assets/images/aeg.jpg" alt="AEG-UM6SS"></a>
+            <a href="index.html" class="site-logo"><img src="assets/images/aeg.jpg" alt="AEG-UM6SS"></a>
             <div class="nav-switch">
                 <i class="fa fa-bars"></i>
             </div>
@@ -857,41 +856,7 @@
         function escapeHtml(s){
             return s.replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
         }
-
-        // initial open on mobile if desired
-        // showWindow(); // uncomment to open by default
     })();
     </script>
-
-    <script>
-// Désactiver le clic droit
-document.addEventListener("contextmenu", function (e) {
-  e.preventDefault();
-  alert("⚠️ vous n'avez aucuns droit sur ce site.");
-});
-
-// Désactiver certaines touches (F12, Ctrl+Shift+I, Ctrl+U, etc.)
-document.addEventListener("keydown", function (e) {
-  // Empêcher F12
-  if (e.key === "F12") {
-    e.preventDefault();
-  }
-  // Empêcher Ctrl+Shift+I (inspecter), Ctrl+Shift+J (console), Ctrl+U (code source)
-  if (e.ctrlKey && (e.shiftKey && ["I", "J"].includes(e.key.toUpperCase()) || e.key.toUpperCase() === "U")) {
-    e.preventDefault();
-  }
-});
-
-// Désactiver le glisser-déposer, la sélection et le copier-coller
-document.addEventListener("dragstart", e => e.preventDefault());
-document.addEventListener("selectstart", e => e.preventDefault());
-document.addEventListener("copy", e => {
-  e.preventDefault();
-  alert("📋 vous n'avez aucuns droit sur ce site.");
-});
-document.addEventListener("cut", e => e.preventDefault());
-document.addEventListener("paste", e => e.preventDefault());
-</script>
-
 </body>
 </html>
