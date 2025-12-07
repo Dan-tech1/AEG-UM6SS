@@ -475,7 +475,7 @@
                     <div class="event-info">
                         <h4>Journée d'intégration:3ème édition</h4>
                         <p><i class="fa fa-calendar-o"></i>12:30 - 18:30 <i class="fa fa-map-marker"></i> UM6SS Casablanca,Campus Anfa  City 1 au centre de congrès</p>
-                        <a href="" class="event-readmore">S'INSCRIRE <i class="fa fa-angle-double-right"></i></a>
+                        <a href="" class="event-readmore">Terminé <i class="fa fa-angle-double-right"></i></a>
                     </div>
                 </div>
                 <div class="col-md-6 event-item">
@@ -858,5 +858,25 @@
         }
     })();
     </script>
+
+    <script>
+// Bloquer clic droit
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// Bloquer F12 et Ctrl+U
+document.addEventListener('keydown', function(e) {
+    // F12
+    if (e.key === "F12") {
+        e.preventDefault();
+    }
+    // Ctrl+U
+    if (e.ctrlKey && e.key.toLowerCase() === 'u') {
+        e.preventDefault();
+    }
+});
+</script>
+
 </body>
 </html>
