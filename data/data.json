@@ -1,7 +1,19 @@
 {
   "events": [
-    {
+        {
       "id": 1,
+      "title": "Tomorrow Young Forum (TYF): Edition 2026",
+      "date": "2026-01-10",
+      "time": "09:00 - 17:00",
+      "location": "Annexe Hassan II",
+      "description": "Jeunesse africaine : innover, s'engager et réussir dans un monde en transformation. L'Association des Étudiants Gabonais de l'UM6SS vous invite à participer à un événement exceptionnel dédié à l'avenir de notre continent. Rejoignez-nous pour la 2ème édition du Tomorrow Young Forum (TYF II) !​Le TYF III est bien plus qu'une conférence ; c'est un espace de rencontre entre la nouvelle génération et les leaders actuels du monde économique.",
+      "image": "assets/evenement/tyf.jpeg",
+      "category": "Vie Associative",
+      "price": "terminé",
+      "priceFor": "/participant"
+    },
+    {
+      "id": 2,
       "title": "Organisation de la 3 ème édition de la journée d'intégration",
       "date": "Samedi 06 Dec 2025",
       "time": "12:30 - 18:30",
@@ -13,7 +25,7 @@
       "priceFor": "pour tous"
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "Célébration du dixieme anniversaire de l'UM6SS",
       "date": "2024-12-17",
       "time": "18:00 - 20:00",
@@ -23,21 +35,19 @@
       "category": "Culture",
       "price": "termné",
       "priceFor": "pour tous "
-    },
-    {
-      "id": 3,
-      "title": "Organisation de la 2 ème édition de la journée d'intégration",
-      "date": "2024-11-23",
-      "time": "10:00",
-      "location": "UM6SS Casablanca,Campusa Anfa City 1",
-      "description": "C'est avec une immensense joie que nous consacrerons la journée du samedi 23 novembre aux nouveaux étudiants Gabonais de notre bien-aimée université. On se donne ainsi rendez-vous pour des moments de convivialité à partager tous ensemble.",
-      "image": "assets/evenement/E3.jpg",
-      "category": "Vie Associative",
-      "price": "terminé",
-      "priceFor": "/participant"
     }
   ],
   "blog": [
+     {
+      "id": 1,
+      "title": "l'AEG-UM6SS au contact des patients gabonais de l'hopital Universitaire international cheikh khalifa ",
+      "date": "2026-01-02",
+      "author": "Communication",
+      "summary": "Le 2 janvier 2026, dans le cadre de la vision du Bureau directeur, une équipe s'est rendue à la direction médicale de l'hôpital Cheikh Khalifa dans l'optique d'obtenir une autorisation nous permettant de rendre visite à nos chers compatriotes venus pour des soins médicaux.Cette initiative vise à leur apporter un soutien moral, psychologique et affectif à travers des visites encadrées et officielles.Dans l'attente d'une suite favorable, nous vous tiendrons informés de toute avancée à ce sujet, afin que les personnes désireuses de participer à ces visites puissent également se manifester.",
+      "content": "",
+      "image": "assets/actuality/p5.jpeg",
+      "category": "Vie Associative"
+    },
     {
       "id": 1,
       "title": "L'AEG-UM6SS lance son site web ",
