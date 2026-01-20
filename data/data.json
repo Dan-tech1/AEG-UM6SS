@@ -1,6 +1,6 @@
 {
   "events": [
-        {
+    {
       "id": 1,
       "title": "Tomorrow Young Forum (TYF): Edition 2026",
       "date": "2026-01-10",
@@ -38,7 +38,7 @@
     }
   ],
   "blog": [
-     {
+    {
       "id": 1,
       "title": "l'AEG-UM6SS au contact des patients gabonais de l'hopital Universitaire international cheikh khalifa ",
       "date": "2026-01-02",
@@ -154,7 +154,6 @@
       "description": "2 ème Année Médecine.",
       "email": "enzonembe@gmail.com"
     }
-
   ],
   "services": [
     {
@@ -259,7 +258,7 @@
     }
   ],
   "partners": [
-     {
+    {
       "id": 1,
       "name": "UNIVERSITÉ MOHAMMED VI DES SCIENCES ET DE LA SANTÉ",
       "logo": "assets/images/UNIVERSITY.jpg",
@@ -276,9 +275,13 @@
       "name": "SMART AFRICA STUDENT",
       "logo": "assets/images/logosmart.jpg",
       "description": "Tel :+212 66 23 12 228 / Mail: Zone3@smartafrica-consulting.ma"
+    },
+    {
+      "id": 4,
+      "name": "D&T Systèmes",
+      "logo": "assets/images/d&t.png",
+      "description": "Tel:+212779639119 / Mail: bouyadavy@gmail.com"
     }
-     
-
   ],
   "testimonials": [
     {
