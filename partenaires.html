@@ -559,20 +559,45 @@
 
         /* Animation subtile pour le titre */
         .page-info-section[data-setbg="img/page-info-bg.jpg"] h2 {
-            animation: titleGlow 3s ease-in-out infinite alternate;
+            animation: none;
         }
-
-        @keyframes titleGlow {
-            from {
-                text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-            }
-
-            to {
-                text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.9),
-                    0 0 20px rgba(252, 209, 22, 0.4);
-            }
+        /* ── Partner info h4 : suppression du gradient interdit ── */
+        .partner-info h4 {
+            color: var(--primary-color) !important;
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: unset !important;
+            background-clip: unset !important;
+            text-shadow: none !important;
         }
+        /* ── Partner type badge ── */
+        .partner-type {
+            background: var(--secondary-color) !important;
+            color: var(--primary-color) !important;
+        }
+        /* ── Benefit items : fond plus sobre ── */
+        .benefit-item {
+            background: rgba(0, 107, 60, 0.35) !important;
+            border: 1px solid rgba(255,255,255,0.20) !important;
+        }
+        /* ── Partners section : ôter le faux gradient sur ::before ── */
+        .partners-section::before { background: none !important; }
+        /* ── Breadcrumb + titres hero ── */
+        body { font-family: 'Inter', sans-serif; }
+        .pi-breadcrumb {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.28);
+            color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+            text-transform: uppercase; padding: 6px 18px; border-radius: 9999px; margin-bottom: 18px;
+        }
+        .pi-breadcrumb i { color: var(--secondary-color); font-size: 10px; }
+        .pi-title { font-size: 38px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.2; }
+        .pi-sub { font-size: 15px; opacity: 0.88; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+        @media (max-width: 480px) { .pi-title { font-size: 24px; } }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -627,9 +652,10 @@
     <section class="page-info-section set-bg" data-setbg="img/page-info-bg.jpg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <h2 class="text-center"></h2>
-                    <p class="text-center">Découvrez les institutions et organisations qui nous soutiennent</p>
+                <div class="col-lg-10 offset-lg-1 text-center">
+                    <div class="pi-breadcrumb"><a href="index.html" style="color:inherit;text-decoration:none">Accueil</a><i class="fa fa-angle-right"></i>Partenaires</div>
+                    <h2 class="pi-title text-center">Nos Partenaires</h2>
+                    <p class="pi-sub text-center">Découvrez les institutions et organisations qui nous soutiennent</p>
                 </div>
             </div>
         </div>
@@ -804,6 +830,7 @@
     </script>
 
     <script src="js/main.js"></script>
+    <script src="js/color-switcher.js"></script>
     <script src="js/partners.js"></script>
 </body>
 

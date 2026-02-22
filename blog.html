@@ -14,7 +14,30 @@
        <!-- Favicon -->
 <link href="/assets/images/aeg.jpg" rel="shortcut icon" type="image/jpeg" />
 <link href="/assets/images/aeg.jpg" rel="icon" type="image/png" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .pi-breadcrumb {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.28);
+            color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+            text-transform: uppercase; padding: 6px 18px; border-radius: 9999px; margin-bottom: 18px;
+        }
+        .pi-breadcrumb i { color: var(--secondary-color); font-size: 10px; }
+        .pi-title { font-size: 38px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.2; }
+        .pi-sub { font-size: 15px; opacity: 0.88; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+        /* ── Newsletter inline ── */
+        .newsletter-section .section-title h3 { color: #fff; font-size: 26px; font-weight: 800; }
+        .newsletter-section .section-title p { color: rgba(255,255,255,0.82); font-size: 14px; }
+        /* ── Blog sidebar ── */
+        .sw-title { font-size: 16px; font-weight: 700; }
+        .tags-widget a { font-size: 13px; border-radius: 9999px; }
+        .category-widget a { font-size: 14px; }
+        .blog-pagination a { border-radius: 8px; font-weight: 600; font-size: 13px; }
+        @media (max-width: 480px) { .pi-title { font-size: 24px; } }
+    </style>
 </head>
 <body>
     <!-- Page Preloder -->
@@ -68,9 +91,10 @@
     <section class="page-info-section set-bg" data-setbg="img/page-info-bg.jpg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <h2 class="text-center"></h2>
-                    <p class="text-center">Restez informé des dernières nouvelles de notre association</p>
+                <div class="col-lg-10 offset-lg-1 text-center">
+                    <div class="pi-breadcrumb"><a href="index.html" style="color:inherit;text-decoration:none">Accueil</a><i class="fa fa-angle-right"></i>Actualités</div>
+                    <h2 class="pi-title text-center">Actualités</h2>
+                    <p class="pi-sub text-center">Restez informé des dernières nouvelles de notre association</p>
                 </div>
             </div>
         </div>
@@ -261,6 +285,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/color-switcher.js"></script>
     <script src="js/blog.js"></script>
 
     <script>

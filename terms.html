@@ -238,7 +238,30 @@
         padding-left: 20px;
     }
 }
+    /* ── Breadcrumb + titres hero ── */
+    body { font-family: 'Inter', sans-serif; }
+    .pi-breadcrumb {
+        display: inline-flex; align-items: center; gap: 8px;
+        background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.28);
+        color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+        text-transform: uppercase; padding: 6px 18px; border-radius: 9999px; margin-bottom: 18px;
+    }
+    .pi-breadcrumb i { color: var(--secondary-color); font-size: 10px; }
+    .pi-title { font-size: 38px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; line-height: 1.2; }
+    .pi-sub { font-size: 15px; opacity: 0.88; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+    /* ── Suppression du gradient interdit dans privacy-highlight ── */
+    .privacy-highlight { background: var(--primary-color) !important; }
+    /* ── Typographie améliorée ── */
+    .privacy-content { border-radius: 16px !important; }
+    .privacy-item h4 { font-weight: 700 !important; }
+    .privacy-item p { color: #4b5563 !important; font-size: 15px !important; line-height: 1.8 !important; }
+    .privacy-item li { color: #4b5563 !important; font-size: 14px !important; line-height: 1.7 !important; }
+    .privacy-item strong { color: var(--primary-color) !important; }
+    @media (max-width: 480px) { .pi-title { font-size: 24px; } }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Page Preloder -->
@@ -250,7 +273,7 @@
     <header class="header-section">
         <div class="container">
             <!-- logo -->
-            <a href="index.html" class="site-logo"><img src="img/logo.png" alt="AEG-UM6SS"></a>
+            <a href="index.html" class="site-logo"><img src="assets/images/aeg.jpg" alt="AEG-UM6SS"></a>
             <div class="nav-switch">
                 <i class="fa fa-bars"></i>
             </div>
@@ -292,9 +315,10 @@
     <section class="page-info-section set-bg" data-setbg="img/page-info-bg.jpg">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 offset-lg-1">
-                    <h2 class="text-center"></h2>
-                    <p class="text-center">Comment nous protégeons et utilisons vos données personnelles</p>
+                <div class="col-lg-10 offset-lg-1 text-center">
+                    <div class="pi-breadcrumb"><a href="index.html" style="color:inherit;text-decoration:none">Accueil</a><i class="fa fa-angle-right"></i>Conditions</div>
+                    <h2 class="pi-title text-center">Conditions d'Utilisation</h2>
+                    <p class="pi-sub text-center">Comment nous protégeons et utilisons vos données personnelles</p>
                 </div>
             </div>
         </div>
@@ -486,5 +510,6 @@
     <!-- Footer section end-->
 
     <script src="js/main.js"></script>
+    <script src="js/color-switcher.js"></script>
 </body>
 </html>

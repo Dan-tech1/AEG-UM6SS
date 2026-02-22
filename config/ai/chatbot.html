@@ -1,0 +1,90 @@
+<!-- ════════════════ CONTENEUR CHATBOT ════════════════ -->
+<div id="aeg-chatbot" aria-live="polite">
+
+  <!-- Fenêtre de conversation -->
+  <div id="aeg-chat-window" role="dialog" aria-label="Assistant AEG" aria-modal="true">
+
+    <!-- En-tête -->
+    <div id="aeg-chat-header">
+      <div class="cb-header-left">
+        <div class="cb-avatar">🤝</div>
+        <div class="cb-header-info">
+          <div class="cb-name">Assistant AEG-UM6SS</div>
+          <div class="cb-status">
+            <span class="cb-status-dot"></span>En ligne — Répond instantanément
+          </div>
+        </div>
+      </div>
+      <div class="cb-header-actions">
+        <button id="aeg-open-enroll">
+          <i class="fas fa-user-plus"></i> S'inscrire
+        </button>
+        <button id="aeg-chat-close" aria-label="Fermer">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Zone messages -->
+    <div id="aeg-chat-body" role="log">
+      <div class="aeg-msg bot">
+        👋 Bonjour ! Je suis l'assistant de l'AEG-UM6SS.<br>
+        Comment puis-je vous aider ?
+      </div>
+    </div>
+
+    <!-- Formulaire adhésion (affiché à la demande) -->
+    <div id="aeg-enroll" style="display:none">
+      <h4><i class="fas fa-user-plus"></i> Formulaire d'adhésion</h4>
+      <input id="en-name"    placeholder="Nom complet *" />
+      <input id="en-email"   placeholder="Email *" type="email" />
+      <select id="en-program">
+        <option value="">Choisir le programme</option>
+        <option>Médecine</option>
+        <option>Orthophonie</option>
+        <option>Biomédical</option>
+        <option>Pharmacie</option>
+        <option>Autre</option>
+      </select>
+      <input id="en-year"  placeholder="Année d'étude" />
+      <textarea id="en-note" rows="2" placeholder="Message optionnel…"></textarea>
+      <div class="cb-enroll-actions">
+        <button id="en-submit">Envoyer</button>
+        <button id="en-cancel">Annuler</button>
+      </div>
+    </div>
+
+    <!-- Pied de page / saisie -->
+    <div id="aeg-chat-footer">
+      <input id="aeg-chat-input" placeholder="Écrivez votre message…" aria-label="Message" />
+      <button id="aeg-chat-send" aria-label="Envoyer">
+        <!-- Icône avion en papier (SVG inline) -->
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+          <path d="M22 2L11 13" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 2L15 22 11 13 2 9l20-7z" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Bulle de teasing -->
+  <div id="cb-bubble" style="display:none">💬 Une question ? Je suis là !</div>
+
+  <!-- Bouton flottant -->
+  <button id="aeg-chat-toggle" aria-label="Ouvrir l'assistant AEG" aria-expanded="false">
+    <!-- Icône bulle de chat -->
+    <svg id="cb-icon-open" width="28" height="28" viewBox="0 0 32 32" fill="none">
+      <path d="M16 3C9.37 3 4 7.71 4 13.5c0 2.8 1.26 5.35 3.32 7.2l-.94 5.24a.5.5 0 0 0 .73.53L13 23.2c.96.2 1.96.3 3 .3 6.63 0 12-4.71 12-10.5S22.63 3 16 3z" fill="#fff" fill-opacity=".95"/>
+      <circle cx="10.5" cy="13.5" r="1.5" fill="var(--primary-color,#006B3C)"/>
+      <circle cx="16"   cy="13.5" r="1.5" fill="var(--primary-color,#006B3C)"/>
+      <circle cx="21.5" cy="13.5" r="1.5" fill="var(--primary-color,#006B3C)"/>
+    </svg>
+    <!-- Icône fermeture -->
+    <svg id="cb-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" style="display:none">
+      <path d="M18 6L6 18M6 6l12 12" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <span class="cb-notif" id="cb-notif"></span>
+  </button>
+
+</div>
+<!-- ════════════════ FIN CHATBOT ════════════════ -->

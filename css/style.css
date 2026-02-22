@@ -1,16 +1,47 @@
-/* ===== VARIABLES CSS ===== */
+/* ===== VARIABLES CSS — REDESIGN AEG-UM6SS ===== */
 :root {
+  /* ── Couleurs identitaires (inchangées) ── */
   --primary-color: #006B3C;
   --secondary-color: #FCD116;
   --accent-color: #3A8E55;
-  --text-color: #333333;
-  --text-light: #777777;
+
+  /* ── Typographie ── */
+  --text-color: #1a2730;
+  --text-light: #5f6b74;
+  --text-muted: #9ca3af;
+
+  /* ── Arrière-plans ── */
   --bg-color: #FFFFFF;
-  --bg-light: #F5F5F5;
-  --bg-dark: #222222;
-  --border-color: #E5E5E5;
-  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
+  --bg-light: #f8faf8;
+  --bg-subtle: #f1f5f1;
+  --bg-dark: #111827;
+  --card-bg: #FFFFFF;
+
+  /* ── Overlay calendrier (adapté dynamiquement par color-switcher.js) ── */
+  --primary-overlay: #004d2b;
+
+  /* ── Bordures ── */
+  --border-color: #e5e7eb;
+  --border-light: rgba(0, 0, 0, 0.06);
+
+  /* ── Ombres unifiées ── */
+  --shadow-sm:  0 2px 8px  rgba(0, 0, 0, 0.05);
+  --shadow:     0 6px 20px rgba(0, 0, 0, 0.07);
+  --shadow-md:  0 8px 24px rgba(0, 0, 0, 0.09);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.10);
+
+  /* ── Border-radius unifiés ── */
+  --radius-sm:   6px;
+  --radius:     12px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-full: 9999px;
+
+  /* ── Transitions ── */
+  --transition:      all 0.3s ease;
+  --transition-fast: all 0.2s ease;
+  --ease-pro: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ===== RESET & BASE STYLES ===== */
@@ -444,18 +475,17 @@ img {
   font-size: 20px;
   margin-bottom: 10px;
 }
-#f1{
-  background: rgba(128, 28, 0, 0.627);
-}#f2{
-  background: rgba(0, 128, 0, 0.526);
-}#f3{
-  background: rgba(255, 255, 0, 0.595);
-}#f4{
-  background: rgba(12, 178, 228, 0.57);
-}#f5{
-  background: rgba(126, 0, 128, 0.474);
-}#f6{
-  background: rgba(23, 0, 128, 0.548);}
+/* ── Service items : couleurs unifiées et professionnelles ── */
+#f1, #f2, #f3, #f4, #f5, #f6 {
+  background: var(--card-bg);
+  border-top: 3px solid var(--primary-color);
+}
+#f1 { border-top-color: #006B3C; }
+#f2 { border-top-color: #3A8E55; }
+#f3 { border-top-color: #FCD116; }
+#f4 { border-top-color: #068a6b; }
+#f5 { border-top-color: #1d6c2c; }
+#f6 { border-top-color: #005f35; }
 @media (max-width: 600px){
   .enroll-list-item {
     flex-direction: column;
@@ -1844,98 +1874,300 @@ img {
 }
 
 /* ===== CALENDRIER AMÉLIORÉ ===== */
-.calendar-header {
-    text-align: center;
-    margin-bottom: 20px;
-    background: #17a2b8;
+/* ===== CALENDRIER AMÉLIORÉ v2 ===== */
+
+/* ── Section calendrier : overlay dynamique lié au color-switcher ── */
+.calendar-section {
+    position: relative;
+    overflow: hidden;
+}
+.calendar-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--primary-overlay, #004d2b);
+    opacity: 0.88;
+    z-index: 0;
+    transition: background-color 0.4s ease;
+}
+.calendar-section .container {
+    position: relative;
+    z-index: 1;
 }
 
-.calendar-header h4 {
-    color: white;
-    font-size: 24px;
-    margin: 0;
+/* Layout 2 colonnes */
+.cal-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
 }
 
-.calendar-grid {
+/* ── Carte principale ── */
+.cal-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 20px;
+    padding: 28px 24px;
+    backdrop-filter: blur(8px);
+}
+
+/* ── Navigation mois ── */
+.cal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+.cal-month-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+}
+.cal-nav-btn {
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.22);
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.cal-nav-btn:hover {
+    background: rgba(255,255,255,0.25);
+    transform: scale(1.08);
+}
+
+/* ── Jours de la semaine ── */
+.cal-weekdays {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    margin-bottom: 20px;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+.cal-weekdays span {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255,255,255,0.55);
+    padding: 4px 0;
+}
+.cal-weekdays .cal-weekend {
+    color: rgba(252,209,22,0.70);
 }
 
-.calendar-day {
-    text-align: center;
-    padding: 10px;
-    color: white;
+/* ── Grille des jours ── */
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 22px;
+}
+.cal-cell {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 13px;
     font-weight: 500;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-}
-
-.calendar-date {
-    position: relative;
-    text-align: center;
-    padding: 15px 5px;
-    color: white;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.calendar-date.empty {
-    background: transparent;
+    color: rgba(255,255,255,0.75);
     cursor: default;
+    position: relative;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+    user-select: none;
+}
+.cal-cell.cal-empty {
+    background: transparent !important;
+}
+.cal-cell.cal-today {
+    background: var(--secondary-color) !important;
+    color: #1a2730 !important;
+    font-weight: 800;
+    box-shadow: 0 4px 14px rgba(252,209,22,0.35);
+}
+.cal-cell.cal-has-event {
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+.cal-cell.cal-has-event:hover {
+    background: rgba(255,255,255,0.22);
+    transform: scale(1.08);
+    z-index: 1;
+}
+.cal-cell.cal-selected {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 1px;
 }
 
-.calendar-date.has-event {
-    background: rgba(252, 209, 22, 0.2);
-    border: 1px solid var(--secondary-color);
+/* Points d'événements */
+.cal-dots {
+    display: flex;
+    gap: 3px;
+    margin-top: 3px;
 }
-
-.calendar-date.has-event:hover {
-    background: rgba(252, 209, 22, 0.3);
-    transform: scale(1.05);
-}
-
-.event-dot {
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 6px;
-    height: 6px;
+.cal-dot {
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
-    background: var(--secondary-color);
+    flex-shrink: 0;
 }
+.cal-dot.culture   { background: #FF6B6B; }
+.cal-dot.academique { background: #4ECDC4; }
+.cal-dot.sport     { background: #45B7D1; }
 
-.calendar-date.culture .event-dot { background: #FF6B6B; }
-.calendar-date.academique .event-dot { background: #4ECDC4; }
-.calendar-date.sport .event-dot { background: #45B7D1; }
-
-.calendar-legend {
+/* ── Légende ── */
+.cal-legend {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 18px;
     flex-wrap: wrap;
 }
+.cal-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.72);
+    font-weight: 500;
+}
 
-.legend-item {
+/* ── Panneau événements ── */
+.cal-events-panel {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 20px;
+    padding: 28px 24px;
+    backdrop-filter: blur(8px);
+    min-height: 360px;
+}
+.cal-events-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.cal-events-heading i {
+    color: var(--secondary-color);
+    font-size: 14px;
+}
+.cal-events-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.cal-event-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 12px 14px;
+    transition: background 0.2s ease;
+    cursor: default;
+}
+.cal-event-item:hover {
+    background: rgba(255,255,255,0.12);
+}
+.cal-event-date-badge {
+    flex-shrink: 0;
+    width: 40px;
+    text-align: center;
+    background: rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 6px 4px;
+    line-height: 1.2;
+}
+.cal-event-date-badge .cal-badge-day {
+    display: block;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    line-height: 1;
+}
+.cal-event-date-badge .cal-badge-month {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255,255,255,0.55);
+    margin-top: 2px;
+}
+.cal-event-info { flex: 1; min-width: 0; }
+.cal-event-info h6 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 4px;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cal-event-meta {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: white;
+    flex-wrap: wrap;
 }
-
-.legend-color {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
+.cal-event-time {
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
 }
+.cal-event-time i { margin-right: 3px; font-size: 10px; }
+.cal-event-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+.cal-event-tag.culture   { background: rgba(255,107,107,0.25); color: #FF6B6B; }
+.cal-event-tag.academique { background: rgba(78,205,196,0.25); color: #4ECDC4; }
+.cal-event-tag.sport     { background: rgba(69,183,209,0.25); color: #45B7D1; }
 
-.legend-color.culture { background: #FF6B6B; }
-.legend-color.academique { background: #4ECDC4; }
-.legend-color.sport { background: #45B7D1; }
+.cal-no-events {
+    display: none;
+    text-align: center;
+    color: rgba(255,255,255,0.45);
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 40px;
+}
+.cal-no-events i { display: block; font-size: 32px; margin-bottom: 10px; opacity: 0.4; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .cal-layout { grid-template-columns: 1fr; }
+    .cal-events-panel { min-height: auto; }
+}
+@media (max-width: 480px) {
+    .cal-card, .cal-events-panel { padding: 18px 14px; }
+    .cal-cell { font-size: 11px; border-radius: 7px; }
+    .cal-month-title { font-size: 15px; }
+}
 
 /* ===== ANIMATIONS SUPPLÉMENTAIRES ===== */
 @keyframes fadeInUp {
@@ -2680,3 +2912,1690 @@ textarea:focus {
       .aeg-msg { font-size: 13px; }
       #aeg-chat-toggle { width: 50px; height: 50px; }
     }
+
+
+/* ============================================================
+   ██████╗ ███████╗██████╗ ███████╗███████╗██╗ ██████╗ ███╗
+   ██╔══██╗██╔════╝██╔══██╗██╔════╝██╔════╝██║██╔════╝ ████╗
+   ██████╔╝█████╗  ██║  ██║█████╗  ███████╗██║██║  ███╗██╔██╗
+   ██╔══██╗██╔══╝  ██║  ██║██╔══╝  ╚════██║██║██║   ██║██║╚██╗
+   ██║  ██║███████╗██████╔╝███████╗███████║██║╚██████╔╝██║ ╚██╗
+   ╚═╝  ╚═╝╚══════╝╚═════╝ ╚══════╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═╝
+   AEG-UM6SS — REDESIGN UI/UX — v2.0 — Production Ready
+   Auteur : Senior Front-End Engineer
+   Contraintes : CSS pur, sans dégradé, identité préservée
+   ============================================================ */
+
+
+/* ============================================================
+   1. HEADER & NAVIGATION — REDESIGN
+   ============================================================ */
+
+/* ── Header principal : plus aéré, logo bien centré ── */
+.header-section {
+  background-color: #fff;
+  box-shadow: var(--shadow-sm);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+  transition: padding 0.3s var(--ease-pro), box-shadow 0.3s var(--ease-pro);
+}
+
+.site-logo img {
+  max-height: 46px;
+  border-radius: var(--radius-full);
+  transition: transform 0.3s var(--ease-pro);
+}
+.site-logo:hover img {
+  transform: scale(1.04);
+}
+
+/* Info header : plus lisible */
+.hf-item p {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-light);
+}
+.hf-item p span {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--primary-color);
+}
+.hf-item i {
+  font-size: 16px;
+  color: var(--primary-color);
+}
+
+/* ── Navigation : sticky, ombre au scroll ── */
+.nav-section {
+  background-color: var(--primary-color);
+  padding: 0;
+  margin-top: 70px;
+  position: sticky;
+  top: 70px; /* colle juste sous le header fixe */
+  z-index: 999;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+  transition: padding 0.3s var(--ease-pro), box-shadow 0.3s var(--ease-pro);
+}
+
+/* État scrollé : ombre renforcée, padding réduit */
+.nav-section.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.14);
+}
+
+.nav-section .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+/* ── Liens nav : underline animé professionnel ── */
+.main-menu {
+  display: flex;
+  gap: 0;
+  margin: 0;
+}
+.main-menu li {
+  position: relative;
+}
+.main-menu li a {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.90);
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 18px 18px;
+  position: relative;
+  transition: color 0.25s var(--ease-pro), background 0.25s var(--ease-pro);
+}
+/* Underline animé */
+.main-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: var(--secondary-color);
+  border-radius: 2px 2px 0 0;
+  transition: width 0.3s var(--ease-pro);
+}
+.main-menu li a:hover,
+.main-menu li.active a {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+.main-menu li a:hover::after,
+.main-menu li.active a::after {
+  width: 70%;
+}
+
+/* Icônes droite nav */
+.nav-right a {
+  display: flex;
+  align-items: center;
+  padding: 18px 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+.nav-right a:hover {
+  color: var(--secondary-color);
+}
+
+
+/* ── Hero margin : ajustement pour nav sticky ── */
+.hero-section {
+  margin-top: 0;
+}
+
+
+/* ============================================================
+   2. HERO SECTION — REDESIGN
+   ============================================================ */
+
+.hero-slider .hs-item {
+  height: 580px;
+}
+.hero-slider .hs-item::before {
+  background: rgba(0, 0, 0, 0.40);
+}
+
+/* Hiérarchie typographique renforcée */
+.hs-subtitle {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--secondary-color);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.hs-subtitle::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: var(--secondary-color);
+}
+
+.hs-text {
+  max-width: 720px; /* largeur contrôlée */
+}
+
+.hs-title {
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.18;
+  margin-bottom: 22px;
+  letter-spacing: -0.5px;
+}
+
+.hs-des {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 600px;
+}
+/* Retrait des <br> inline du hero */
+.hs-des br { display: none; }
+
+/* CTA hero amélioré */
+.hero-section .site-btn {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 14px 40px;
+  border-radius: var(--radius-full);
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  transition: background 0.3s var(--ease-pro), color 0.3s var(--ease-pro), transform 0.2s var(--ease-pro);
+  display: inline-block;
+}
+.hero-section .site-btn:hover {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+.hero-section .site-btn a {
+  color: inherit;
+}
+
+
+/* ============================================================
+   3. SECTION TITRE & TEXTES — REDESIGN
+   ============================================================ */
+
+.section-title {
+  margin-bottom: 56px;
+}
+.section-title h3 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--primary-color);
+  letter-spacing: -0.3px;
+  margin-bottom: 14px;
+}
+.section-title h3::after {
+  height: 3px;
+  width: 48px;
+  bottom: -12px;
+  background-color: var(--secondary-color);
+}
+.section-title p {
+  font-size: 15px;
+  color: var(--text-light);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+/* ── CTA bouton principal ── */
+.site-btn {
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 13px 34px;
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  transition: background 0.3s var(--ease-pro), color 0.3s var(--ease-pro), transform 0.2s var(--ease-pro), box-shadow 0.3s var(--ease-pro);
+}
+.site-btn:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 107, 60, 0.20);
+}
+
+
+/* ============================================================
+   4. SECTION COUNTER — REDESIGN
+   ============================================================ */
+
+.counter-section {
+  background-color: var(--bg-subtle);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 52px 0;
+}
+.big-icon {
+  font-size: 60px;
+  color: var(--primary-color);
+  opacity: 0.85;
+}
+.counter-content h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+.counter-content p {
+  color: var(--text-light);
+  font-size: 14px;
+}
+.counter-item h4 {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--primary-color);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.counter-item {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-light);
+}
+
+
+/* ============================================================
+   5. CARDS SERVICES / ÉVÉNEMENTS / BLOG — REDESIGN
+   ============================================================ */
+
+/* ── Service items : cards professionnelles ── */
+.service-item {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg) !important;
+  padding: 28px 24px !important;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s var(--ease-pro), box-shadow 0.25s var(--ease-pro) !important;
+}
+.service-item:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: var(--shadow-hover) !important;
+  cursor: pointer;
+}
+.service-icon img {
+  border-radius: var(--radius);
+  max-height: 180px;
+  object-fit: cover;
+  width: 100%;
+}
+.service-content h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+.service-content p {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* ── Course items ── */
+.course-item {
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm) !important;
+  overflow: hidden;
+  transition: transform 0.25s var(--ease-pro), box-shadow 0.25s var(--ease-pro) !important;
+}
+.course-item:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-hover) !important;
+}
+.course-thumb img {
+  height: 200px;
+  object-fit: cover;
+}
+.course-cat {
+  border-radius: var(--radius-full);
+  background-color: var(--primary-color);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.course-info {
+  padding: 22px;
+}
+.course-info h4 {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--text-color);
+}
+.course-info .date {
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+/* ── Event items ── */
+.event-item {
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm) !important;
+  overflow: hidden;
+  transition: transform 0.25s var(--ease-pro), box-shadow 0.25s var(--ease-pro) !important;
+}
+.event-item:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-hover) !important;
+}
+.event-date {
+  border-radius: var(--radius-sm);
+  background-color: var(--primary-color);
+  font-size: 13px;
+}
+.event-info h4 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-color);
+}
+.event-info p {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.65;
+}
+.event-readmore {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-color);
+  letter-spacing: 0.3px;
+}
+
+/* ── Blog items ── */
+.blog-item {
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm) !important;
+  overflow: hidden;
+  transition: transform 0.25s var(--ease-pro), box-shadow 0.25s var(--ease-pro) !important;
+}
+.blog-item:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-hover) !important;
+}
+.blog-content h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.45;
+}
+.blog-meta {
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+
+/* ============================================================
+   6. SECTION ABOUT — REDESIGN
+   ============================================================ */
+
+.about-section {
+  padding: 90px 0;
+  background-color: var(--bg-light);
+}
+.about-text {
+  padding-right: 20px;
+}
+.about-text p {
+  font-size: 15px !important;
+  font-style: normal !important;
+  color: var(--text-light) !important;
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+.about-text .section-title h3 {
+  text-align: left;
+}
+.about-text .section-title h3::after {
+  left: 0;
+  transform: none;
+}
+.about-img img {
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+
+
+/* ============================================================
+   7. SECTION BUREAU / MEMBRES — REDESIGN
+   ============================================================ */
+
+.team-section {
+  padding: 90px 0;
+  background-color: var(--bg-subtle);
+}
+.team-section .row {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+.team-member {
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm) !important;
+  background: var(--card-bg);
+  overflow: hidden;
+  transition: transform 0.25s var(--ease-pro), box-shadow 0.25s var(--ease-pro) !important;
+}
+.team-member:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-hover) !important;
+}
+.team-img {
+  height: 230px;
+  position: relative;
+  overflow: hidden;
+}
+.team-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.4s var(--ease-pro) !important;
+}
+.team-member:hover .team-img img {
+  transform: scale(1.05) !important; /* plus subtil */
+}
+.team-info {
+  padding: 22px 20px;
+  border-top: 3px solid var(--primary-color);
+}
+.team-info h5 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 6px;
+}
+.team-position {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+
+/* ============================================================
+   8. SECTION FAITS — REDESIGN
+   ============================================================ */
+
+.fact {
+  padding: 24px 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.25s var(--ease-pro);
+}
+.fact:hover {
+  transform: translateY(-4px);
+}
+.fact-text h2 {
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.fact-text p {
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  margin-top: 6px;
+}
+.fact-icon {
+  font-size: 44px;
+}
+
+
+/* ============================================================
+   9. SECTION CONTACT — REDESIGN
+   ============================================================ */
+
+.contact-form {
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-md) !important;
+  border: 1px solid var(--border-light);
+  padding: 44px !important;
+}
+.contact-form h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-color) !important;
+  margin-bottom: 28px;
+}
+.contact-form input,
+.contact-form textarea {
+  border: 1.5px solid var(--border-color) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 14px 18px !important;
+  font-size: 14px;
+  color: var(--text-color);
+  background: var(--bg-light);
+  margin-bottom: 18px !important;
+  transition: border-color 0.25s var(--ease-pro), box-shadow 0.25s var(--ease-pro) !important;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 3px rgba(0, 107, 60, 0.12) !important;
+  outline: none;
+  background: #fff;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.contact-form .site-btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 4px;
+  padding: 15px !important;
+  font-size: 14px !important;
+}
+
+/* Infos contact */
+.ci-icon {
+  border-radius: var(--radius) !important;
+  width: 52px !important;
+  height: 52px !important;
+  font-size: 20px !important;
+}
+.ci-text h5 {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: var(--text-color) !important;
+}
+
+
+/* ============================================================
+   10. NEWSLETTER & FOOTER — REDESIGN
+   ============================================================ */
+
+.newsletter-section {
+  padding: 56px 0;
+}
+.newsletter input {
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  padding: 14px 22px;
+}
+.newsletter button {
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 14px 28px;
+}
+
+.footer-section {
+  background-color: var(--bg-dark);
+}
+.fw-title {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.fw-title::after {
+  width: 32px;
+  height: 2px;
+}
+.social a {
+  border-radius: var(--radius-full);
+  width: 38px;
+  height: 38px;
+  font-size: 15px;
+  transition: background 0.25s var(--ease-pro), color 0.25s var(--ease-pro), transform 0.2s var(--ease-pro);
+}
+.social a:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   11. PAGE INFO SECTION — REDESIGN
+   ============================================================ */
+
+.page-info-section {
+  padding: 88px 0 56px;
+}
+.page-info-section h2 {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+.page-info-section p {
+  font-size: 15px;
+  opacity: 0.88;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+
+/* ============================================================
+   12. TÉMOIGNAGES — REDESIGN
+   ============================================================ */
+
+.testimonial-card {
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm) !important;
+  padding: 36px 28px 28px !important;
+  transition: transform 0.25s var(--ease-pro), box-shadow 0.25s var(--ease-pro) !important;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-hover) !important;
+}
+.testimonial-quote {
+  border-radius: var(--radius-sm);
+  width: 38px;
+  height: 38px;
+  background: var(--primary-color);
+}
+.testimonial-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-light);
+  font-style: italic;
+}
+.author-image {
+  border-radius: var(--radius-full);
+  border: 3px solid var(--primary-color);
+}
+.author-details h5 {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* ============================================================
+   13. SIDEBAR (BLOG) — REDESIGN
+   ============================================================ */
+
+.sidebar-widget {
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm) !important;
+}
+.sw-title {
+  font-size: 17px;
+  font-weight: 700;
+  border-bottom: 2px solid var(--border-color);
+}
+.search-widget input {
+  border-radius: var(--radius-full) !important;
+  border: 1.5px solid var(--border-color);
+}
+.search-widget input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 107, 60, 0.10);
+}
+
+
+/* ============================================================
+   14. FILTRES ÉVÉNEMENTS — REDESIGN
+   ============================================================ */
+
+.filter-btn {
+  border-radius: var(--radius-full) !important;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 10px 24px;
+  transition: background 0.25s var(--ease-pro), color 0.25s var(--ease-pro), transform 0.2s var(--ease-pro);
+}
+.filter-btn:hover,
+.filter-btn.active {
+  transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   15. ACTIVITÉS — REDESIGN
+   ============================================================ */
+
+.activity-item {
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm) !important;
+  transition: transform 0.25s var(--ease-pro), box-shadow 0.25s var(--ease-pro) !important;
+  padding: 28px 24px !important;
+}
+.activity-item:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-hover) !important;
+}
+.activity-item h5 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+.activity-icon {
+  font-size: 42px;
+  color: var(--primary-color);
+  opacity: 0.85;
+}
+
+
+/* ============================================================
+   16. MISSION SECTION — REDESIGN
+   ============================================================ */
+
+.mission-item {
+  padding: 32px 24px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background 0.3s var(--ease-pro);
+}
+.mission-item:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+.mi-icon {
+  font-size: 44px;
+  color: var(--secondary-color);
+  margin-bottom: 18px;
+}
+.mission-item h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+
+/* ============================================================
+   17. ANIMATIONS AU SCROLL — REVEAL SYSTEM
+   Optimisé avec IntersectionObserver (voir main.js)
+   ============================================================ */
+
+/* État initial avant apparition */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s var(--ease-pro), transform 0.6s var(--ease-pro);
+}
+
+/* État visible après déclenchement */
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger : délais progressifs pour les grilles cards */
+.reveal.delay-1 { transition-delay: 0.10s; }
+.reveal.delay-2 { transition-delay: 0.20s; }
+.reveal.delay-3 { transition-delay: 0.30s; }
+.reveal.delay-4 { transition-delay: 0.40s; }
+.reveal.delay-5 { transition-delay: 0.50s; }
+
+/* Variante fade latérale */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 0.55s var(--ease-pro), transform 0.55s var(--ease-pro);
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(24px);
+  transition: opacity 0.55s var(--ease-pro), transform 0.55s var(--ease-pro);
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* ============================================================
+   18. PREFERS-REDUCED-MOTION — Accessibilité
+   Désactive toutes les animations si l'utilisateur le demande
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ============================================================
+   19. FOCUS STATES — Accessibilité clavier
+   ============================================================ */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--secondary-color);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+
+/* ============================================================
+   20. RESPONSIVE COMPLET — 1024 / 768 / 480px
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .main-menu li a {
+    padding: 16px 14px;
+    font-size: 12px;
+  }
+  .hs-title {
+    font-size: 36px;
+  }
+  .hero-slider .hs-item {
+    height: 480px;
+  }
+  .about-section {
+    padding: 70px 0;
+  }
+  .team-section {
+    padding: 70px 0;
+  }
+}
+
+/* ============================================================
+   NAVIGATION MOBILE & TABLETTE — v2.1
+   ============================================================ */
+
+/* ── Overlay backdrop (injecté par JS) ── */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 997;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ── Scroll lock ── */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ── Hamburger : état actif ── */
+.nav-switch {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+  line-height: 1;
+}
+.nav-switch:hover {
+  background: rgba(0, 107, 60, 0.10);
+}
+.nav-switch i {
+  font-size: 20px;
+  color: var(--primary-color);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.2s ease;
+  display: block;
+}
+.nav-switch.active i {
+  transform: rotate(180deg);
+  color: var(--primary-color);
+}
+
+/* ── TABLETTE (≤ 991px) : layout horizontal, menu slide-down ── */
+@media (max-width: 991px) {
+  .nav-switch {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Nav container horizontal */
+  .nav-section .container {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between;
+    min-height: 52px;
+    padding: 0 16px;
+    position: relative;
+  }
+
+  /* Menu slide-down fluide (max-height au lieu de display toggle) */
+  .main-menu {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #004d2a;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.38s ease;
+    z-index: 999;
+    box-shadow: none;
+    border-top: none;
+  }
+
+  .main-menu.active {
+    max-height: 540px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.20);
+    border-top: 2px solid rgba(252, 209, 22, 0.30);
+  }
+
+  /* Séparateurs items */
+  .main-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .main-menu li:last-child { border-bottom: none; }
+
+  /* Liens */
+  .main-menu li a {
+    padding: 15px 24px;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+    transition: background 0.2s ease, color 0.2s ease, padding-left 0.22s ease;
+  }
+
+  /* Point indicateur */
+  .main-menu li a::before {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    flex-shrink: 0;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  .main-menu li a::after { display: none !important; }
+
+  .main-menu li.active a,
+  .main-menu li a:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    padding-left: 30px;
+  }
+  .main-menu li.active a::before,
+  .main-menu li a:hover::before {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Ligne active jaune */
+  .main-menu li.active a {
+    border-left: 3px solid var(--secondary-color);
+    padding-left: 21px;
+  }
+
+  /* Nav-right aligné à droite */
+  .nav-right {
+    position: static !important;
+    display: flex;
+    gap: 2px;
+    margin-left: 0;
+  }
+  .nav-right a {
+    padding: 13px 10px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 16px;
+  }
+  .nav-right a:hover { color: var(--secondary-color); }
+}
+
+@media (max-width: 768px) {
+  /* Navigation mobile propre */
+  .nav-section {
+    top: 58px;
+    margin-top: 58px;
+  }
+  .header-section {
+    padding: 8px 0;
+  }
+  /* Hero mobile */
+  .hero-slider .hs-item {
+    height: 380px;
+  }
+  .hs-title {
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+  .hs-subtitle {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  .hs-des {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  /* Cards responsive */
+  .team-img {
+    height: 200px;
+  }
+  .contact-form {
+    padding: 28px 20px !important;
+  }
+  /* Sections spacing mobile */
+  .about-section,
+  .team-section {
+    padding: 56px 0;
+  }
+  .spad {
+    padding: 64px 0;
+  }
+  /* Titre section mobile */
+  .section-title h3 {
+    font-size: 26px;
+  }
+  .section-title {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-slider .hs-item {
+    height: 300px;
+  }
+  .hs-title {
+    font-size: 22px;
+  }
+  .hs-des {
+    font-size: 13px;
+  }
+  .hero-section .site-btn {
+    padding: 11px 28px;
+    font-size: 12px;
+  }
+  .section-title h3 {
+    font-size: 22px;
+  }
+  .fact-text h2 {
+    font-size: 34px;
+  }
+  .counter-item h4 {
+    font-size: 32px;
+  }
+  .contact-form {
+    padding: 22px 16px !important;
+  }
+  .team-section .row {
+    grid-template-columns: 1fr;
+  }
+  .service-item {
+    padding: 22px 18px !important;
+  }
+  /* Page info mobile */
+  .page-info-section {
+    padding: 70px 0 40px;
+  }
+  .page-info-section h2 {
+    font-size: 26px;
+  }
+}
+
+/* ============================================================
+   COLOR SWITCHER WIDGET — AEG-UM6SS
+   ============================================================ */
+
+/* ── Conteneur racine ── */
+#cs-root {
+  position: fixed;
+  right: 20px;
+  bottom: 88px;        /* au-dessus du bouton dark-mode */
+  z-index: 10500;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+/* ── Bouton déclencheur ── */
+#cs-toggle-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s var(--ease-pro),
+              box-shadow 0.25s var(--ease-pro);
+  flex-shrink: 0;
+}
+#cs-toggle-btn:hover {
+  transform: scale(1.10);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.30);
+}
+#cs-toggle-btn.cs-toggle--active {
+  transform: rotate(30deg) scale(1.05);
+}
+
+/* ── Panneau ── */
+#cs-panel {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 16px 56px rgba(0, 0, 0, 0.18);
+  width: 280px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  /* Slide-up fermé */
+  opacity: 0;
+  transform: translateY(12px) scale(0.97);
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.28s var(--ease-pro),
+              transform 0.28s var(--ease-pro),
+              visibility 0.28s;
+  transform-origin: bottom right;
+}
+#cs-panel.cs-panel--open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+  visibility: visible;
+}
+
+/* Header panneau */
+.cs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 12px;
+  background: var(--primary-color);
+  color: #fff;
+}
+.cs-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.cs-close {
+  background: rgba(255, 255, 255, 0.18);
+  border: none;
+  color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: background 0.2s ease;
+}
+.cs-close:hover { background: rgba(255, 255, 255, 0.32); }
+
+/* Section */
+.cs-section {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.cs-section:last-child { border-bottom: none; }
+.cs-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+/* Swatches */
+.cs-swatches {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.cs-swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  outline: none;
+}
+.cs-swatch:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.cs-swatch:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+.cs-swatch-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.6);
+}
+
+/* Pickers */
+.cs-pickers { display: flex; flex-direction: column; gap: 10px; }
+.cs-picker-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: default;
+}
+.cs-picker-wrap > span {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+.cs-picker-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cs-picker-row input[type="color"] {
+  width: 42px;
+  height: 34px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 2px;
+  background: #fff;
+}
+.cs-hex-val {
+  font-size: 12px;
+  font-family: 'Courier New', monospace;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+/* Bouton Appliquer */
+.cs-apply-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 9px;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+.cs-apply-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+/* Bouton Réinitialiser */
+.cs-footer-section { padding-top: 10px; padding-bottom: 12px; }
+.cs-reset-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 12px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.cs-reset-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  #cs-root { right: 14px; bottom: 82px; }
+  #cs-panel { width: calc(100vw - 28px); }
+  #cs-toggle-btn { width: 44px; height: 44px; font-size: 16px; }
+}
+
+/* ============================================================
+   DARK THEME — Mode sombre global (body.dark-theme)
+   ============================================================ */
+
+body.dark-theme {
+  --bg-color:    #0f1117;
+  --bg-light:    #181c26;
+  --bg-subtle:   #1e2330;
+  --card-bg:     #1e2330;
+  --text-color:  #e8edf4;
+  --text-light:  #9faabb;
+  --text-muted:  #6b7685;
+  --border-color: #2e3443;
+  --border-light: rgba(255,255,255,0.06);
+  --shadow-sm:   0 2px 8px  rgba(0,0,0,0.30);
+  --shadow:      0 6px 20px rgba(0,0,0,0.40);
+  --shadow-md:   0 8px 24px rgba(0,0,0,0.45);
+  --shadow-lg:   0 16px 40px rgba(0,0,0,0.55);
+  --shadow-hover:0 12px 30px rgba(0,0,0,0.50);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* ── Préchargeur ── */
+body.dark-theme #preloder { background: #0f1117; }
+body.dark-theme .loader   { border-color: #2e3443; border-top-color: var(--primary-color); }
+
+/* ── Header ── */
+body.dark-theme .header-section {
+  background-color: #181c26;
+  border-bottom-color: #2e3443;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.45);
+}
+body.dark-theme .nav-switch { color: var(--text-color); }
+body.dark-theme .hf-item p  { color: var(--text-light); }
+
+/* ── Sections de fond ── */
+body.dark-theme .counter-section {
+  background-color: var(--bg-subtle);
+  border-color: #2e3443;
+}
+body.dark-theme .about-section   { background-color: var(--bg-light); }
+body.dark-theme .team-section    { background-color: var(--bg-subtle); }
+body.dark-theme .testimonials-section:not(.set-bg) { background-color: var(--bg-light); }
+
+/* ── Titres & textes ── */
+body.dark-theme h2, body.dark-theme h3,
+body.dark-theme h4, body.dark-theme h5, body.dark-theme h6 {
+  color: var(--text-color);
+}
+body.dark-theme p { color: var(--text-light); }
+body.dark-theme .section-title h3 { color: var(--text-color); }
+body.dark-theme .section-title p  { color: var(--text-light); }
+body.dark-theme .counter-content h2  { color: var(--text-color); }
+body.dark-theme .counter-content p   { color: var(--text-light); }
+body.dark-theme .about-text p        { color: var(--text-light) !important; }
+
+/* ── Cards service / cours / événements / blog / équipe ── */
+body.dark-theme .service-item,
+body.dark-theme .course-item,
+body.dark-theme .event-item,
+body.dark-theme .blog-item,
+body.dark-theme .team-member {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+}
+body.dark-theme #f1, body.dark-theme #f2, body.dark-theme #f3,
+body.dark-theme #f4, body.dark-theme #f5, body.dark-theme #f6 {
+  background-color: var(--card-bg) !important;
+}
+body.dark-theme .service-content h4,
+body.dark-theme .course-info h4,
+body.dark-theme .event-info h4,
+body.dark-theme .blog-content h4,
+body.dark-theme .team-info h5 { color: var(--text-color); }
+body.dark-theme .service-content p,
+body.dark-theme .event-info p,
+body.dark-theme .course-info .date,
+body.dark-theme .blog-meta { color: var(--text-light); }
+body.dark-theme .team-info .team-position { color: var(--primary-color); }
+
+/* ── Activités ── */
+body.dark-theme .activity-category {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+body.dark-theme .activity-item {
+  background-color: var(--bg-subtle) !important;
+  border: 1px solid var(--border-color) !important;
+}
+body.dark-theme .activity-item h5 { color: var(--text-color) !important; }
+body.dark-theme .activity-item p  { color: var(--text-light) !important; }
+body.dark-theme .activity-icon    { background: rgba(0,107,60,0.18) !important; }
+body.dark-theme .category-icon    { background: rgba(0,107,60,0.18) !important; }
+body.dark-theme .category-header  { border-bottom-color: var(--border-color) !important; }
+body.dark-theme .category-header h4 { color: var(--text-color) !important; }
+
+/* ── Calendrier dark theme : overlay encore plus sombre ── */
+body.dark-theme .calendar-section::before {
+  background-color: #0a0c0f;
+  opacity: 0.82;
+}
+body.dark-theme .cal-card,
+body.dark-theme .cal-events-panel {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.10);
+}
+body.dark-theme .cal-cell {
+  color: rgba(255,255,255,0.60);
+}
+body.dark-theme .cal-cell.cal-has-event {
+  background: rgba(255,255,255,0.10);
+  color: #fff;
+}
+body.dark-theme .cal-cell.cal-today {
+  background: var(--secondary-color) !important;
+  color: #1a2730 !important;
+}
+
+/* ── Formulaires ── */
+body.dark-theme .contact-form {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+}
+body.dark-theme .contact-form h3 { color: var(--text-color) !important; }
+body.dark-theme .contact-form input,
+body.dark-theme .contact-form textarea,
+body.dark-theme .registration-form input,
+body.dark-theme .registration-form select {
+  background-color: var(--bg-light) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-color) !important;
+}
+body.dark-theme .contact-form input:focus,
+body.dark-theme .contact-form textarea:focus {
+  background-color: var(--bg-subtle) !important;
+}
+body.dark-theme .contact-form input::placeholder,
+body.dark-theme .contact-form textarea::placeholder { color: var(--text-muted) !important; }
+
+/* ── Sidebar blog ── */
+body.dark-theme .sidebar-widget {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+body.dark-theme .sw-title {
+  color: var(--text-color);
+  border-bottom-color: var(--border-color);
+}
+body.dark-theme .search-widget input {
+  background-color: var(--bg-light);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+body.dark-theme .category-widget li    { border-bottom-color: var(--border-color); }
+body.dark-theme .category-widget a     { color: var(--text-light); }
+body.dark-theme .category-widget span  { background-color: var(--bg-subtle); color: var(--text-light); }
+body.dark-theme .recent-posts-widget .post-item { border-bottom-color: var(--border-color); }
+body.dark-theme .post-content h6  { color: var(--text-color); }
+body.dark-theme .post-content span { color: var(--text-muted); }
+body.dark-theme .tags-widget a {
+  background-color: var(--bg-subtle);
+  color: var(--text-light);
+}
+body.dark-theme .blog-pagination a {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+/* ── FAQ ── */
+body.dark-theme .faq-item {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+}
+body.dark-theme .faq-item h4 { color: var(--text-color); }
+body.dark-theme .faq-item p  { color: var(--text-light); }
+
+/* ── Filtre événements ── */
+body.dark-theme .filter-btn {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+body.dark-theme .filter-btn.active,
+body.dark-theme .filter-btn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+
+/* ── Modale ── */
+body.dark-theme .modal-content {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+body.dark-theme .close-modal { color: var(--text-light); }
+body.dark-theme .registration-form input,
+body.dark-theme .registration-form select {
+  background-color: var(--bg-light);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+/* ── Toast notifications ── */
+body.dark-theme .toast {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Témoignages (non set-bg) ── */
+body.dark-theme .testimonial-card:not(.testimonials-section.set-bg .testimonial-card) {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+}
+body.dark-theme .testimonial-content p { color: var(--text-light) !important; }
+body.dark-theme .author-promotion { color: var(--text-muted) !important; }
+
+/* ── Partenaires ── */
+body.dark-theme .partner-item,
+body.dark-theme .partner-card {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+/* ── Droits / Confidentialité ── */
+body.dark-theme .privacy-section,
+body.dark-theme .terms-section {
+  background-color: var(--bg-color);
+}
+body.dark-theme .privacy-section p,
+body.dark-theme .terms-section p { color: var(--text-light); }
+
+/* ── Copyright ── */
+body.dark-theme .copyright {
+  background: #080b0f;
+  border-top-color: #1e2330;
+}
+body.dark-theme .copyright p { color: #7a8494; }
+
+/* ── Newsletter input ── */
+body.dark-theme .newsletter input {
+  background-color: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+body.dark-theme .newsletter input::placeholder { color: rgba(255,255,255,0.45); }
+
+/* ── Chatbot window ── */
+body.dark-theme #aeg-chat-window:not([style*="none"]) {
+  background: var(--card-bg);
+}
+body.dark-theme #aeg-chat-footer  { border-top-color: var(--border-color); background: var(--card-bg); }
+body.dark-theme #aeg-chat-input   {
+  background-color: var(--bg-light);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+body.dark-theme .aeg-msg.bot      { background: var(--bg-subtle); border-color: var(--border-color); color: var(--text-color); }
+body.dark-theme .aeg-msg.user     { background: rgba(0,107,60,0.22); color: var(--text-color); }
+
+/* ── Overlay mobile nav ── */
+body.dark-theme .nav-overlay { background: rgba(0,0,0,0.75); }
+
+/* ── Responsive: bouton theme-toggle ── */
+body.dark-theme #theme-toggle { background: var(--card-bg); color: var(--secondary-color); border: 1px solid var(--border-color); }
+
+/* ============================================================
+   FIN DU REDESIGN AEG-UM6SS v2.0
+   ============================================================ */
