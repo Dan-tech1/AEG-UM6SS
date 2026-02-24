@@ -4,594 +4,294 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Activités - AEG-UM6SS</title>
-    <meta
-      name="description"
-      content="Découvrez toutes les activités organisées par l'Association des Étudiants Gabonais de l'UM6SS"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/carts.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <meta name="robots" content="index, follow" />
-
-    <!-- Favicon -->
-    <link href="/assets/images/aeg.jpg" rel="shortcut icon" type="image/jpeg" />
-    <link href="/assets/images/aeg.jpg" rel="icon" type="image/png" />
+    <meta name="description" content="Découvrez toutes les activités organisées par l'Association des Étudiants Gabonais de l'UM6SS" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-      /* ── Breadcrumb pill hero ── */
-      .pi-breadcrumb {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: rgba(255, 255, 255, 0.15);
-        border: 1px solid rgba(255, 255, 255, 0.28);
-        color: #fff;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        padding: 6px 18px;
-        border-radius: 9999px;
-        margin-bottom: 18px;
-      }
-      .pi-breadcrumb i {
-        color: var(--secondary-color);
-        font-size: 10px;
-      }
-      .pi-title {
-        font-size: 38px;
-        font-weight: 800;
-        letter-spacing: -0.5px;
-        margin-bottom: 14px;
-        line-height: 1.2;
-      }
-      .pi-sub {
-        font-size: 15px;
-        opacity: 0.88;
-        max-width: 520px;
-        margin: 0 auto;
-        line-height: 1.7;
-      }
-      /* ── Category icons redesign ── */
-      .category-header {
-        border-bottom: 2px solid var(--border-color);
-        padding-bottom: 16px;
-        margin-bottom: 28px;
-      }
-      .category-header h4 {
-        font-size: 20px;
-        font-weight: 700;
-        color: #0d1f12;
-      }
-      .category-icon {
-        width: 42px;
-        height: 42px;
-        background: rgba(0, 107, 60, 0.1);
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        color: var(--primary-color);
-        margin-right: 14px;
-      }
-      .activity-category {
-        background: #fff;
-        border-radius: 16px;
-        padding: 32px;
-        margin-bottom: 28px;
-        border: 1px solid #e5e7eb;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-      }
-      .activity-item {
-        border-radius: 14px !important;
-      }
-      .activity-icon {
-        width: 54px;
-        height: 54px;
-        background: rgba(0, 107, 60, 0.08);
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 18px;
-        font-size: 24px;
-        color: var(--primary-color);
-      }
-      .activity-item h5 {
-        font-size: 16px;
-        font-weight: 700;
-        color: #0d1f12;
-        margin-bottom: 10px;
-      }
-      .activity-item p {
-        font-size: 14px;
-        color: #4b5563;
-        line-height: 1.7;
-      }
-      /* ── Calendar section ── */
-      .calendar-section .section-title h3 {
-        color: #fff;
-      }
-      .calendar-section .section-title h3::after {
-        background: var(--secondary-color);
-      }
-      .calendar-section .section-title p {
-        color: rgba(255, 255, 255, 0.8);
-      }
-      @media (max-width: 480px) {
-        .pi-title {
-          font-size: 24px;
-        }
-        .pi-sub {
-          font-size: 13px;
-        }
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <meta name="robots" content="index, follow" />
+    <link href="/assets/images/aeg.jpg" rel="shortcut icon" type="image/jpeg" />
+    <link href="/assets/images/aeg.jpg" rel="icon" type="image/png" />
+    <link rel="stylesheet" href="css/output.css" />
   </head>
-  <body>
-    <!-- Page Preloder -->
-    <div id="preloder">
-      <div class="loader"></div>
-    </div>
 
-    <!-- header section -->
-    <header class="header-section">
-      <div class="container">
-        <!-- logo -->
-        <a href="index.html" class="site-logo"
-          ><img src="assets/images/aeg.jpg" alt="AEG-UM6SS"
-        /></a>
-        <div class="nav-switch">
-          <i class="fa fa-bars"></i>
-        </div>
-        <div class="header-info">
-          <div class="hf-item">
-            <i class="fa fa-clock-o"></i>
-            <p><span>Heures d'ouverture:</span>24/24 - 7j/7</p>
-          </div>
-          <div class="hf-item">
-            <i class="fa fa-map-marker"></i>
-            <p>
-              <span>Notre adresse:</span>Université Mohammed VI des Sciences et
-              de la Santé, Casablanca
-            </p>
-          </div>
+  <body class="font-body text-base leading-relaxed text-slate-900 bg-white antialiased">
+    <div id="preloder"><div class="loader"></div></div>
+
+    <!-- HEADER -->
+    <header class="header-section bg-white shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[70px]">
+        <a href="index.html" class="site-logo flex-shrink-0"><img src="assets/images/aeg.jpg" alt="AEG-UM6SS" class="h-12 w-12 rounded-xl object-cover" /></a>
+        <div class="nav-switch lg:hidden flex items-center justify-center w-10 h-10 rounded-lg bg-surface-200 cursor-pointer transition-colors hover:bg-primary-100"><i class="fa fa-bars text-slate-600"></i></div>
+        <div class="header-info hidden lg:flex items-center gap-8">
+          <div class="hf-item flex items-center gap-3 text-sm text-slate-600"><i class="fa fa-clock-o text-primary text-lg"></i><p><span class="font-semibold text-slate-800 block text-xs uppercase tracking-wider">Heures d'ouverture:</span>24/24 - 7j/7</p></div>
+          <div class="hf-item flex items-center gap-3 text-sm text-slate-600"><i class="fa fa-map-marker text-primary text-lg"></i><p><span class="font-semibold text-slate-800 block text-xs uppercase tracking-wider">Notre adresse:</span>Université Mohammed VI des Sciences et de la Santé, Casablanca</p></div>
         </div>
       </div>
     </header>
-    <!-- header section end-->
 
-    <!-- Header section  -->
-    <nav class="nav-section">
-      <div class="container">
-        <div class="nav-right">
-          <a href=""><i class="fa fa-fire"></i></a>
-          <a href=""><i class="fa fa-book"></i></a>
+    <!-- NAV -->
+    <nav class="nav-section bg-primary fixed top-[70px] left-0 right-0 z-40 transition-all duration-300 shadow-md" aria-label="Navigation principale">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[54px]">
+        <div class="nav-right flex items-center gap-1">
+          <a href="" class="flex items-center justify-center w-10 h-10 text-white/70 hover:text-secondary transition-colors"><i class="fa fa-fire"></i></a>
+          <a href="" class="flex items-center justify-center w-10 h-10 text-white/70 hover:text-secondary transition-colors"><i class="fa fa-book"></i></a>
         </div>
-        <ul class="main-menu">
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="about.html">À propos</a></li>
-          <li><a href="events.html">Événements</a></li>
-          <li class="active"><a href="activities.html">Activités</a></li>
-          <li><a href="blog.html">Actualités</a></li>
-          <li><a href="partenaires.html">Partenaires</a></li>
-          <li><a href="contact.html">Contact</a></li>
+        <ul class="main-menu hidden lg:flex items-center gap-1">
+          <li><a href="index.html" class="px-4 py-2 text-sm font-heading font-medium text-white/90 hover:text-secondary transition-colors rounded-lg hover:bg-white/10">Accueil</a></li>
+          <li><a href="about.html" class="px-4 py-2 text-sm font-heading font-medium text-white/90 hover:text-secondary transition-colors rounded-lg hover:bg-white/10">À propos</a></li>
+          <li><a href="events.html" class="px-4 py-2 text-sm font-heading font-medium text-white/90 hover:text-secondary transition-colors rounded-lg hover:bg-white/10">Événements</a></li>
+          <li class="active"><a href="activities.html" class="px-4 py-2 text-sm font-heading font-medium text-secondary rounded-lg bg-white/10">Activités</a></li>
+          <li><a href="blog.html" class="px-4 py-2 text-sm font-heading font-medium text-white/90 hover:text-secondary transition-colors rounded-lg hover:bg-white/10">Actualités</a></li>
+          <li><a href="partenaires.html" class="px-4 py-2 text-sm font-heading font-medium text-white/90 hover:text-secondary transition-colors rounded-lg hover:bg-white/10">Partenaires</a></li>
+          <li><a href="contact.html" class="px-5 py-2 text-sm font-heading font-bold text-primary bg-secondary rounded-full hover:bg-secondary-300 transition-all duration-300 shadow-gold hover:shadow-lg hover:-translate-y-0.5">Contact</a></li>
         </ul>
       </div>
     </nav>
-    <!-- Header section end -->
 
-    <!-- Page info section -->
-    <section class="page-info-section set-bg" data-setbg="img/page-info-bg.jpg">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10 offset-lg-1 text-center">
-            <div class="pi-breadcrumb">
-              <a href="index.html" style="color: inherit; text-decoration: none"
-                >Accueil</a
-              ><i class="fa fa-angle-right"></i>Activités
-            </div>
-            <h2 class="pi-title text-center">Nos Activités</h2>
-            <p class="pi-sub text-center">
-              Découvrez toutes nos activités culturelles, sportives et
-              académiques
-            </p>
-          </div>
+    <!-- PAGE HERO -->
+    <section class="page-hero-bg relative flex items-center justify-center text-center text-white min-h-[280px] md:min-h-[340px] mt-[124px]">
+      <div class="absolute inset-0 bg-primary/70"></div>
+      <div class="relative z-10 max-w-3xl mx-auto px-4 py-16">
+        <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/25 px-5 py-1.5 rounded-full text-[11px] font-bold tracking-[2px] uppercase text-white/95 mb-5">
+          <a href="index.html" class="text-inherit no-underline">Accueil</a> <i class="fa fa-angle-right text-secondary text-[10px]"></i> Activités
         </div>
+        <h2 class="font-heading text-3xl sm:text-4xl lg:text-[42px] font-extrabold tracking-tight mb-4 leading-tight">Nos Activités</h2>
+        <p class="text-base text-white/85 max-w-xl mx-auto leading-relaxed">Découvrez toutes nos activités culturelles, sportives et académiques</p>
       </div>
     </section>
-    <!-- Page info section end -->
 
-    <!-- Activities section -->
-    <section class="activities-section spad">
-      <div class="container">
-        <div class="section-title text-center">
-          <h3>NOS DOMAINES D'ACTIVITÉS</h3>
-          <p>
-            Nous proposons une large gamme d'activités pour répondre aux besoins
-            de nos membres
-          </p>
+    <!-- ACTIVITIES SECTION -->
+    <section class="py-20 md:py-24 bg-surface-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section title -->
+        <div class="text-center mb-14 reveal">
+          <h3 class="font-heading text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-slate-900 tracking-tight mb-4 relative inline-block">
+            NOS DOMAINES D'ACTIVITÉS
+            <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-primary to-teal rounded-full"></span>
+          </h3>
+          <p class="text-[15px] text-slate-500 max-w-2xl mx-auto leading-relaxed mt-6">Nous proposons une large gamme d'activités pour répondre aux besoins de nos membres</p>
         </div>
 
         <!-- Activités Culturelles -->
-        <div class="activity-category">
-          <div class="category-header">
-            <i class="fas fa-crown category-icon"></i>
-            <h4>Activités Culturelles</h4>
+        <div class="activity-category bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 mb-8 shadow-card reveal">
+          <div class="flex items-center gap-4 mb-8 pb-5 border-b border-slate-100">
+            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-xl"><i class="fas fa-crown"></i></div>
+            <h4 class="font-heading text-xl font-bold text-slate-900">Activités Culturelles</h4>
           </div>
-          <div class="row">
-            <div class="col-lg-4 col-md-6">
-              <div class="activity-item">
-                <div class="activity-icon">
-                  <i class="fas fa-images"></i>
-                </div>
-                <h5>Soirées Culturelles</h5>
-                <p>
-                  Découverte et partage de la culture gabonaise à travers la
-                  musique, la danse et la gastronomie.
-                </p>
-              </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="activity-item bg-surface-50 border border-slate-100 rounded-2xl p-6 text-center hover:shadow-lift hover:-translate-y-1 transition-all duration-300 group">
+              <div class="w-14 h-14 bg-primary/8 rounded-xl flex items-center justify-center mx-auto mb-5 text-primary text-2xl group-hover:bg-primary group-hover:text-white transition-all"><i class="fas fa-images"></i></div>
+              <h5 class="font-heading text-base font-bold text-slate-900 mb-3">Soirées Culturelles</h5>
+              <p class="text-sm text-slate-500 leading-relaxed">Découverte et partage de la culture gabonaise à travers la musique, la danse et la gastronomie.</p>
             </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="activity-item">
-                <div class="activity-icon">
-                  <i class="fas fa-music"></i>
-                </div>
-                <h5>Ateliers Traditionnels</h5>
-                <p>
-                  Apprentissage des danses et chants traditionnels gabonais avec
-                  des artistes locaux.
-                </p>
-              </div>
+            <div class="activity-item bg-surface-50 border border-slate-100 rounded-2xl p-6 text-center hover:shadow-lift hover:-translate-y-1 transition-all duration-300 group">
+              <div class="w-14 h-14 bg-primary/8 rounded-xl flex items-center justify-center mx-auto mb-5 text-primary text-2xl group-hover:bg-primary group-hover:text-white transition-all"><i class="fas fa-music"></i></div>
+              <h5 class="font-heading text-base font-bold text-slate-900 mb-3">Ateliers Traditionnels</h5>
+              <p class="text-sm text-slate-500 leading-relaxed">Apprentissage des danses et chants traditionnels gabonais avec des artistes locaux.</p>
             </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="activity-item">
-                <div class="activity-icon">
-                  <i class="fas fa-palette"></i>
-                </div>
-                <h5>Expositions Artistiques</h5>
-                <p>
-                  Mise en valeur des talents artistiques de nos membres à
-                  travers des expositions.
-                </p>
-              </div>
+            <div class="activity-item bg-surface-50 border border-slate-100 rounded-2xl p-6 text-center hover:shadow-lift hover:-translate-y-1 transition-all duration-300 group">
+              <div class="w-14 h-14 bg-primary/8 rounded-xl flex items-center justify-center mx-auto mb-5 text-primary text-2xl group-hover:bg-primary group-hover:text-white transition-all"><i class="fas fa-palette"></i></div>
+              <h5 class="font-heading text-base font-bold text-slate-900 mb-3">Expositions Artistiques</h5>
+              <p class="text-sm text-slate-500 leading-relaxed">Mise en valeur des talents artistiques de nos membres à travers des expositions.</p>
             </div>
           </div>
         </div>
 
         <!-- Activités Académiques -->
-        <div class="activity-category">
-          <div class="category-header">
-            <i class="fas fa-book category-icon"></i>
-            <h4>Activités Académiques</h4>
+        <div class="activity-category bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 mb-8 shadow-card reveal">
+          <div class="flex items-center gap-4 mb-8 pb-5 border-b border-slate-100">
+            <div class="w-12 h-12 bg-indigo/10 rounded-xl flex items-center justify-center text-indigo text-xl"><i class="fas fa-book"></i></div>
+            <h4 class="font-heading text-xl font-bold text-slate-900">Activités Académiques</h4>
           </div>
-          <div class="row">
-            <div class="col-lg-4 col-md-6">
-              <div class="activity-item">
-                <div class="activity-icon">
-                  <i class="fas fa-pen"></i>
-                </div>
-                <h5>Séances de Tutorat</h5>
-                <p>
-                  Soutien académique par les étudiants des années supérieures
-                  dans toutes les matières.
-                </p>
-              </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="activity-item bg-surface-50 border border-slate-100 rounded-2xl p-6 text-center hover:shadow-lift hover:-translate-y-1 transition-all duration-300 group">
+              <div class="w-14 h-14 bg-indigo/8 rounded-xl flex items-center justify-center mx-auto mb-5 text-indigo text-2xl group-hover:bg-indigo group-hover:text-white transition-all"><i class="fas fa-pen"></i></div>
+              <h5 class="font-heading text-base font-bold text-slate-900 mb-3">Séances de Tutorat</h5>
+              <p class="text-sm text-slate-500 leading-relaxed">Soutien académique par les étudiants des années supérieures dans toutes les matières.</p>
             </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="activity-item">
-                <div class="activity-icon">
-                  <i class="fas fa-microphone"></i>
-                </div>
-                <h5>Conférences et Séminaires</h5>
-                <p>
-                  Rencontres avec des professionnels de santé et experts dans
-                  différents domaines.
-                </p>
-              </div>
+            <div class="activity-item bg-surface-50 border border-slate-100 rounded-2xl p-6 text-center hover:shadow-lift hover:-translate-y-1 transition-all duration-300 group">
+              <div class="w-14 h-14 bg-indigo/8 rounded-xl flex items-center justify-center mx-auto mb-5 text-indigo text-2xl group-hover:bg-indigo group-hover:text-white transition-all"><i class="fas fa-microphone"></i></div>
+              <h5 class="font-heading text-base font-bold text-slate-900 mb-3">Conférences et Séminaires</h5>
+              <p class="text-sm text-slate-500 leading-relaxed">Rencontres avec des professionnels de santé et experts dans différents domaines.</p>
             </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="activity-item">
-                <div class="activity-icon">
-                  <i class="fas fa-clipboard-list"></i>
-                </div>
-                <h5>Préparation aux Examens</h5>
-                <p>
-                  Sessions intensives de révision et préparation aux examens de
-                  fin d'année.
-                </p>
-              </div>
+            <div class="activity-item bg-surface-50 border border-slate-100 rounded-2xl p-6 text-center hover:shadow-lift hover:-translate-y-1 transition-all duration-300 group">
+              <div class="w-14 h-14 bg-indigo/8 rounded-xl flex items-center justify-center mx-auto mb-5 text-indigo text-2xl group-hover:bg-indigo group-hover:text-white transition-all"><i class="fas fa-clipboard-list"></i></div>
+              <h5 class="font-heading text-base font-bold text-slate-900 mb-3">Préparation aux Examens</h5>
+              <p class="text-sm text-slate-500 leading-relaxed">Sessions intensives de révision et préparation aux examens de fin d'année.</p>
             </div>
           </div>
         </div>
 
         <!-- Activités Sportives -->
-        <div class="activity-category">
-          <div class="category-header">
-            <i class="fas fa-shield-halved category-icon"></i>
-            <h4>Activités Sportives</h4>
+        <div class="activity-category bg-white border border-slate-200 rounded-2xl p-8 sm:p-10 shadow-card reveal">
+          <div class="flex items-center gap-4 mb-8 pb-5 border-b border-slate-100">
+            <div class="w-12 h-12 bg-coral/10 rounded-xl flex items-center justify-center text-coral text-xl"><i class="fas fa-shield-halved"></i></div>
+            <h4 class="font-heading text-xl font-bold text-slate-900">Activités Sportives</h4>
           </div>
-          <div class="row">
-            <div class="col-lg-4 col-md-6">
-              <div class="activity-item">
-                <div class="activity-icon">
-                  <i class="fas fa-futbol"></i>
-                </div>
-                <h5>Tournois de Football</h5>
-                <p>
-                  Compétitions amicales entre étudiants et avec d'autres
-                  associations.
-                </p>
-              </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="activity-item bg-surface-50 border border-slate-100 rounded-2xl p-6 text-center hover:shadow-lift hover:-translate-y-1 transition-all duration-300 group">
+              <div class="w-14 h-14 bg-coral/8 rounded-xl flex items-center justify-center mx-auto mb-5 text-coral text-2xl group-hover:bg-coral group-hover:text-white transition-all"><i class="fas fa-futbol"></i></div>
+              <h5 class="font-heading text-base font-bold text-slate-900 mb-3">Tournois de Football</h5>
+              <p class="text-sm text-slate-500 leading-relaxed">Compétitions amicales entre étudiants et avec d'autres associations.</p>
             </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="activity-item">
-                <div class="activity-icon">
-                  <i class="fas fa-person-running"></i>
-                </div>
-                <h5>Marathons et Courses</h5>
-                <p>
-                  Participation à des événements sportifs pour promouvoir la
-                  santé et le bien-être.
-                </p>
-              </div>
+            <div class="activity-item bg-surface-50 border border-slate-100 rounded-2xl p-6 text-center hover:shadow-lift hover:-translate-y-1 transition-all duration-300 group">
+              <div class="w-14 h-14 bg-coral/8 rounded-xl flex items-center justify-center mx-auto mb-5 text-coral text-2xl group-hover:bg-coral group-hover:text-white transition-all"><i class="fas fa-person-running"></i></div>
+              <h5 class="font-heading text-base font-bold text-slate-900 mb-3">Marathons et Courses</h5>
+              <p class="text-sm text-slate-500 leading-relaxed">Participation à des événements sportifs pour promouvoir la santé et le bien-être.</p>
             </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="activity-item">
-                <div class="activity-icon">
-                  <i class="fas fa-trophy"></i>
-                </div>
-                <h5>Sports Collectifs</h5>
-                <p>
-                  Basketball, volleyball et autres sports d'équipe pour
-                  développer l'esprit d'équipe.
-                </p>
-              </div>
+            <div class="activity-item bg-surface-50 border border-slate-100 rounded-2xl p-6 text-center hover:shadow-lift hover:-translate-y-1 transition-all duration-300 group">
+              <div class="w-14 h-14 bg-coral/8 rounded-xl flex items-center justify-center mx-auto mb-5 text-coral text-2xl group-hover:bg-coral group-hover:text-white transition-all"><i class="fas fa-trophy"></i></div>
+              <h5 class="font-heading text-base font-bold text-slate-900 mb-3">Sports Collectifs</h5>
+              <p class="text-sm text-slate-500 leading-relaxed">Basketball, volleyball et autres sports d'équipe pour développer l'esprit d'équipe.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- Activities section end -->
 
-    <!-- Calendar section -->
-    <section
-      class="calendar-section spad set-bg"
-      data-setbg="img/calendar-bg.jpg"
-    >
-      <div class="container">
-        <div class="section-title text-center text-white">
-          <h3>CALENDRIER DES ACTIVITÉS</h3>
-          <p>Consultez notre programme mensuel d'activités</p>
+    <!-- CALENDAR SECTION -->
+    <section class="calendar-section py-20 md:py-24 bg-[#0a1a12] relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,107,60,0.15),transparent_60%)]"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section title -->
+        <div class="text-center mb-14 reveal">
+          <h3 class="font-heading text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-white tracking-tight mb-4 relative inline-block">
+            CALENDRIER DES ACTIVITÉS
+            <span class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-secondary to-amber rounded-full"></span>
+          </h3>
+          <p class="text-[15px] text-white/70 max-w-2xl mx-auto leading-relaxed mt-6">Consultez notre programme mensuel d'activités</p>
         </div>
-        <div class="cal-layout">
+
+        <div class="cal-layout grid grid-cols-1 lg:grid-cols-5 gap-8">
           <!-- Calendrier interactif -->
-          <div class="cal-card">
-            <div class="cal-nav">
-              <button
-                class="cal-nav-btn"
-                id="cal-prev"
-                aria-label="Mois précédent"
-              >
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <span id="cal-month-title" class="cal-month-title"></span>
-              <button
-                class="cal-nav-btn"
-                id="cal-next"
-                aria-label="Mois suivant"
-              >
-                <i class="fas fa-chevron-right"></i>
-              </button>
+          <div class="cal-card lg:col-span-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8">
+            <div class="cal-nav flex items-center justify-between mb-6">
+              <button class="cal-nav-btn w-10 h-10 flex items-center justify-center rounded-xl bg-white/10 text-white hover:bg-primary transition-colors" id="cal-prev" aria-label="Mois précédent"><i class="fas fa-chevron-left"></i></button>
+              <span id="cal-month-title" class="cal-month-title font-heading text-lg font-bold text-white"></span>
+              <button class="cal-nav-btn w-10 h-10 flex items-center justify-center rounded-xl bg-white/10 text-white hover:bg-primary transition-colors" id="cal-next" aria-label="Mois suivant"><i class="fas fa-chevron-right"></i></button>
             </div>
-            <div class="cal-weekdays">
-              <span>Lun</span><span>Mar</span><span>Mer</span> <span>Jeu</span
-              ><span>Ven</span> <span class="cal-weekend">Sam</span
-              ><span class="cal-weekend">Dim</span>
+            <div class="cal-weekdays grid grid-cols-7 gap-1 mb-3">
+              <span class="text-xs font-semibold text-white/60 text-center py-2">Lun</span>
+              <span class="text-xs font-semibold text-white/60 text-center py-2">Mar</span>
+              <span class="text-xs font-semibold text-white/60 text-center py-2">Mer</span>
+              <span class="text-xs font-semibold text-white/60 text-center py-2">Jeu</span>
+              <span class="text-xs font-semibold text-white/60 text-center py-2">Ven</span>
+              <span class="text-xs font-semibold text-coral/80 text-center py-2">Sam</span>
+              <span class="text-xs font-semibold text-coral/80 text-center py-2">Dim</span>
             </div>
-            <div class="cal-grid" id="cal-grid"></div>
-            <div class="cal-legend">
-              <div class="cal-legend-item">
-                <span class="cal-dot culture"></span>Culturel
-              </div>
-              <div class="cal-legend-item">
-                <span class="cal-dot academique"></span>Académique
-              </div>
-              <div class="cal-legend-item">
-                <span class="cal-dot sport"></span>Sportif
-              </div>
+            <div class="cal-grid grid grid-cols-7 gap-1" id="cal-grid"></div>
+            <div class="cal-legend flex flex-wrap items-center gap-6 mt-6 pt-5 border-t border-white/10">
+              <div class="cal-legend-item flex items-center gap-2 text-xs text-white/70"><span class="cal-dot culture w-3 h-3 rounded-full bg-secondary"></span>Culturel</div>
+              <div class="cal-legend-item flex items-center gap-2 text-xs text-white/70"><span class="cal-dot academique w-3 h-3 rounded-full bg-indigo"></span>Académique</div>
+              <div class="cal-legend-item flex items-center gap-2 text-xs text-white/70"><span class="cal-dot sport w-3 h-3 rounded-full bg-coral"></span>Sportif</div>
             </div>
           </div>
 
           <!-- Panneau événements du mois -->
-          <div class="cal-events-panel">
-            <h5 class="cal-events-heading" id="cal-events-title">
-              <i class="fas fa-calendar-alt"></i>
+          <div class="cal-events-panel lg:col-span-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8">
+            <h5 class="cal-events-heading flex items-center gap-3 font-heading text-lg font-bold text-white mb-6" id="cal-events-title">
+              <i class="fas fa-calendar-alt text-secondary"></i>
               <span>Événements du mois</span>
             </h5>
-            <ul class="cal-events-list" id="cal-events-list"></ul>
-            <p class="cal-no-events" id="cal-no-events">
-              <i class="fas fa-calendar-xmark"></i>
+            <ul class="cal-events-list space-y-3" id="cal-events-list"></ul>
+            <p class="cal-no-events text-sm text-white/50 text-center py-8" id="cal-no-events">
+              <i class="fas fa-calendar-xmark text-2xl block mb-3 text-white/30"></i>
               Aucun événement ce mois-ci.
             </p>
           </div>
         </div>
       </div>
     </section>
-    <!-- Gallery section -->
-    <div class="gallery-section">
-      <div class="gallery" id="gallery-container">
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery-section py-0">
+      <div class="gallery gallery-grid" id="gallery-container">
         <div class="grid-sizer"></div>
         <!-- Les images seront chargées dynamiquement ici depuis gallery.json -->
       </div>
-    </div>
-    <!-- Gallery section -->
-    <!-- Footer section -->
-    <footer class="footer-section">
-      <div class="container footer-top">
-        <div class="row">
-          <!-- widget -->
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-section bg-[#0a1a12] text-slate-400">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div class="footer-widget">
             <div class="about-widget">
-              <img class="dt" src="assets/images/aeg.jpg" alt="AEG-UM6SS" />
-              <p>
-                L'Association des Étudiants Gabonais de l'UM6SS œuvre pour
-                l'épanouissement académique, culturel et social de ses membres.
-              </p>
-              <div class="social pt-1">
-                <a href=""><i class="fa fa-twitter-square"></i></a>
-                <a href=""><i class="fa fa-facebook-square"></i></a>
-                <a href=""><i class="fa fa-instagram"></i></a>
-                <a href=""><i class="fa fa-linkedin-square"></i></a>
-                <a href=""><i class="fa fa-youtube-play"></i></a>
+              <img src="assets/images/aeg.jpg" alt="AEG-UM6SS" class="h-14 w-14 rounded-xl object-cover mb-5" />
+              <p class="text-sm text-slate-400 leading-relaxed mb-5">L'Association des Étudiants Gabonais de l'UM6SS œuvre pour l'épanouissement académique, culturel et social de ses membres.</p>
+              <div class="flex items-center gap-3">
+                <a href="" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 text-slate-400 hover:bg-primary hover:text-white transition-all"><i class="fa fa-twitter"></i></a>
+                <a href="" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 text-slate-400 hover:bg-primary hover:text-white transition-all"><i class="fa fa-facebook"></i></a>
+                <a href="" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 text-slate-400 hover:bg-primary hover:text-white transition-all"><i class="fa fa-instagram"></i></a>
+                <a href="" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 text-slate-400 hover:bg-primary hover:text-white transition-all"><i class="fa fa-linkedin"></i></a>
+                <a href="" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 text-slate-400 hover:bg-primary hover:text-white transition-all"><i class="fa fa-youtube-play"></i></a>
               </div>
             </div>
           </div>
-          <!-- widget -->
           <div class="footer-widget">
-            <h6 class="fw-title">LIENS UTILES</h6>
-            <div class="dobule-link">
-              <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="parteners.html">Partenaires</a></li>
-                <li><a href="events.html">Événements</a></li>
-                <li><a href="activities.html">Activités</a></li>
+            <h6 class="font-heading text-sm font-bold uppercase tracking-wider text-white mb-5">LIENS UTILES</h6>
+            <div class="flex gap-8">
+              <ul class="space-y-2.5">
+                <li><a href="index.html" class="text-sm text-slate-400 hover:text-secondary transition-colors">Accueil</a></li>
+                <li><a href="about.html" class="text-sm text-slate-400 hover:text-secondary transition-colors">À propos</a></li>
+                <li><a href="partenaires.html" class="text-sm text-slate-400 hover:text-secondary transition-colors">Partenaires</a></li>
+                <li><a href="events.html" class="text-sm text-slate-400 hover:text-secondary transition-colors">Événements</a></li>
+                <li><a href="activities.html" class="text-sm text-slate-400 hover:text-secondary transition-colors">Activités</a></li>
               </ul>
-              <ul>
-                <li><a href="terms.html">Politique de confidentialité</a></li>
-                <li><a href="404.html">Conditions d'utilisation</a></li>
-                <li><a href="404.html">Aide</a></li>
-                <li><a href="404.html">FAQ</a></li>
-                <li><a href="404.html">Plan du site</a></li>
+              <ul class="space-y-2.5">
+                <li><a href="privacy.html" class="text-sm text-slate-400 hover:text-secondary transition-colors">Confidentialité</a></li>
+                <li><a href="terms.html" class="text-sm text-slate-400 hover:text-secondary transition-colors">CGU</a></li>
+                <li><a href="404.html" class="text-sm text-slate-400 hover:text-secondary transition-colors">Aide</a></li>
+                <li><a href="404.html" class="text-sm text-slate-400 hover:text-secondary transition-colors">FAQ</a></li>
+                <li><a href="404.html" class="text-sm text-slate-400 hover:text-secondary transition-colors">Plan du site</a></li>
               </ul>
             </div>
           </div>
-          <!-- widget -->
-          <div class="col-sm-6 col-lg-3 footer-widget">
-            <h6 class="fw-title">ARTICLES RÉCENTS</h6>
-            <ul class="recent-post">
-              <li>
-                <p>Nouveau Bureau Élu pour<br />l'Année 2025-2026</p>
-                <span><i class="fa fa-clock-o"></i>01 Oct 2025</span>
-              </li>
-              <li>
-                <p>Partenariat avec l'Ambassade<br />du Gabon au Maroc</p>
-                <span><i class="fa fa-clock-o"></i>2023</span>
-              </li>
+          <div class="footer-widget">
+            <h6 class="font-heading text-sm font-bold uppercase tracking-wider text-white mb-5">ARTICLES RÉCENTS</h6>
+            <ul class="space-y-4">
+              <li><p class="text-sm text-slate-400 leading-snug mb-1">Nouveau Bureau Élu pour<br>l'Année 2025-2026</p><span class="text-xs text-slate-500"><i class="fa fa-clock-o mr-1"></i>01 Oct 2025</span></li>
+              <li><p class="text-sm text-slate-400 leading-snug mb-1">Partenariat avec l'Ambassade<br>du Gabon au Maroc</p><span class="text-xs text-slate-500"><i class="fa fa-clock-o mr-1"></i>2023</span></li>
             </ul>
           </div>
-          <!-- widget -->
-          <div class="col-sm-6 col-lg-3 footer-widget">
-            <h6 class="fw-title">CONTACT</h6>
-            <ul class="contact">
-              <li>
-                <p>
-                  <i class="fa fa-map-marker"></i> Université Mohammed VI des
-                  Sciences et de la Santé, Casablanca
-                </p>
-              </li>
-              <li>
-                <p><i class="fa fa-phone"></i> (+212) 778 856 692</p>
-              </li>
-              <li>
-                <p><i class="fa fa-envelope"></i> aegum6ss@gmail.com</p>
-              </li>
-              <li>
-                <p><i class="fa fa-clock-o"></i>24/24 - 7j/7</p>
-              </li>
+          <div class="footer-widget">
+            <h6 class="font-heading text-sm font-bold uppercase tracking-wider text-white mb-5">CONTACT</h6>
+            <ul class="space-y-3">
+              <li><p class="text-sm text-slate-400 leading-snug"><i class="fa fa-map-marker mr-2 text-primary"></i>Université Mohammed VI des Sciences et de la Santé, Casablanca</p></li>
+              <li><p class="text-sm text-slate-400"><i class="fa fa-phone mr-2 text-primary"></i>(+212) 778 856 692</p></li>
+              <li><p class="text-sm text-slate-400"><i class="fa fa-envelope mr-2 text-primary"></i><a href="mailto:aegum6ss@gmail.com" class="hover:text-secondary transition-colors">aegum6ss@gmail.com</a></p></li>
+              <li><p class="text-sm text-slate-400"><i class="fa fa-clock-o mr-2 text-primary"></i>24/24 - 7j/7</p></li>
             </ul>
           </div>
         </div>
       </div>
-      <!-- Copyright -->
-      <div class="copyright">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <p>&copy; 2025 AEG-UM6SS - Tous droits réservés</p>
-              <p>
-                <a
-                  rel="license"
-                  href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                  target="_blank"
-                >
-                  <img
-                    alt="Licence Creative Commons"
-                    style="border-width: 0; vertical-align: middle"
-                    src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"
-                  /> </a
-                ><br />
-                Ce site est mis à disposition selon les termes de la
-                <a
-                  rel="license"
-                  href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                  target="_blank"
-                >
-                  Licence Creative Commons Attribution - Pas d’Utilisation
-                  Commerciale - Partage dans les Mêmes Conditions 4.0
-                  International </a
-                >.
-              </p>
-            </div>
-          </div>
+      <div class="flex items-center justify-center gap-3 py-3 border-t border-white/6">
+        <span class="text-xs text-slate-500">Site développé par</span>
+        <a href="https://mandadavy.vercel.app/" target="_blank"><img src="assets/images/d&t.png" alt="DAN-tech" class="h-6 opacity-60 hover:opacity-100 transition-opacity" /></a>
+      </div>
+      <div class="bg-black/30 py-5 border-t border-white/6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p class="text-xs text-slate-500">&copy; 2025 AEG-UM6SS - Tous droits réservés</p>
+          <p class="text-xs text-slate-500 mt-1">
+            <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Licence Creative Commons" class="inline align-middle" style="border-width:0" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a><br>
+            Ce site est mis à disposition selon les termes de la <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" class="text-slate-400 hover:text-secondary underline">Licence Creative Commons Attribution - Pas d'Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International</a>.
+          </p>
         </div>
       </div>
     </footer>
-
-    <script>
-      // Désactiver le clic droit
-      document.addEventListener("contextmenu", function (e) {
-        e.preventDefault();
-        alert("⚠️ vous n'avez aucuns droit sur ce site.");
-      });
-
-      // Désactiver certaines touches (F12, Ctrl+Shift+I, Ctrl+U, etc.)
-      document.addEventListener("keydown", function (e) {
-        // Empêcher F12
-        if (e.key === "F12") {
-          e.preventDefault();
-        }
-        // Empêcher Ctrl+Shift+I (inspecter), Ctrl+Shift+J (console), Ctrl+U (code source)
-        if (
-          e.ctrlKey &&
-          ((e.shiftKey && ["I", "J"].includes(e.key.toUpperCase())) ||
-            e.key.toUpperCase() === "U")
-        ) {
-          e.preventDefault();
-        }
-      });
-
-      // Désactiver le glisser-déposer, la sélection et le copier-coller
-      document.addEventListener("dragstart", (e) => e.preventDefault());
-      document.addEventListener("selectstart", (e) => e.preventDefault());
-      document.addEventListener("copy", (e) => {
-        e.preventDefault();
-        alert("📋 vous n'avez aucuns droit sur ce site.");
-      });
-      document.addEventListener("cut", (e) => e.preventDefault());
-      document.addEventListener("paste", (e) => e.preventDefault());
-    </script>
 
     <script src="js/main.js"></script>
     <script src="js/color-switcher.js"></script>
     <script src="js/activities.js"></script>
     <script src="js/js/gallery-simple.js"></script>
+    <script>
+      document.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "F12") e.preventDefault();
+        if (e.ctrlKey && ((e.shiftKey && ["I","J"].includes(e.key.toUpperCase())) || e.key.toUpperCase() === "U")) e.preventDefault();
+      });
+    </script>
   </body>
 </html>

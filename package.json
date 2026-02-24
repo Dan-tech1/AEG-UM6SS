@@ -1,0 +1,25 @@
+{
+  "name": "aeg-um6ss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sw.js",
+  "scripts": {
+    "build:css": "npx tailwindcss -i css/input.css -o css/output.css --minify",
+    "watch:css": "npx tailwindcss -i css/input.css -o css/output.css --watch",
+    "build": "npm run build:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dan-tech1/AEG-UM6SS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dan-tech1/AEG-UM6SS/issues"
+  },
+  "homepage": "https://github.com/Dan-tech1/AEG-UM6SS#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

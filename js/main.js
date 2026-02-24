@@ -6,83 +6,148 @@ document.addEventListener("DOMContentLoaded", function () {
     if (preloader) {
       setTimeout(() => {
         preloader.style.opacity = "0";
+        preloader.style.pointerEvents = "none"; // Ne plus bloquer les clics dès le fade-out
         setTimeout(() => {
           preloader.style.display = "none";
         }, 500);
-      }, 1000);
+      }, 800);
     }
   }
 
+  // Failsafe : forcer la suppression du preloader après 5s max (en cas d'erreur JS)
+  setTimeout(() => {
+    const preloader = document.getElementById("preloder");
+    if (preloader && preloader.style.display !== "none") {
+      preloader.style.opacity = "0";
+      preloader.style.pointerEvents = "none";
+      preloader.style.display = "none";
+    }
+  }, 5000);
+
   function initMobileMenu() {
     const navSwitch = document.querySelector(".nav-switch");
-    const mainMenu = document.querySelector(".main-menu");
-
+    const mainMenu  = document.querySelector(".main-menu");
     if (!navSwitch || !mainMenu) return;
 
-    // Accessibilité
-    navSwitch.setAttribute("role", "button");
-    navSwitch.setAttribute("aria-expanded", "false");
-    navSwitch.setAttribute("aria-label", "Menu de navigation");
-    navSwitch.setAttribute("tabindex", "0");
+    const PAGE_ICONS = {
+      "index.html":       "fa-house",
+      "about.html":       "fa-circle-info",
+      "events.html":      "fa-calendar-days",
+      "activities.html":  "fa-star",
+      "blog.html":        "fa-newspaper",
+      "partenaires.html": "fa-handshake",
+      "contact.html":     "fa-envelope",
+    };
 
-    // Overlay backdrop
+    /* Page courante */
+    const currentFile = window.location.pathname.split("/").pop() || "index.html";
+
+    /* ── Construire la liste de liens à partir du .main-menu ── */
+    const links = [];
+    mainMenu.querySelectorAll("li > a").forEach(function (a) {
+      const href  = a.getAttribute("href") || "#";
+      const label = a.textContent.trim();
+      const hrefClean = href.split("?")[0].split("#")[0];
+      links.push({
+        href,
+        label,
+        icon: PAGE_ICONS[hrefClean] || "fa-circle",
+        active: hrefClean === currentFile || (currentFile === "" && hrefClean === "index.html"),
+      });
+    });
+
+    /* ── Construire le drawer ── */
+    const linksHTML = links.map(function (l) {
+      return '<li class="' + (l.active ? "active" : "") + '">'
+        + '<a href="' + l.href + '">'
+        + '<i class="fas ' + l.icon + '"></i>'
+        + l.label
+        + '</a></li>';
+    }).join("");
+
+    const drawer = document.createElement("div");
+    drawer.id = "mob-drawer";
+    drawer.setAttribute("role", "dialog");
+    drawer.setAttribute("aria-modal", "true");
+    drawer.setAttribute("aria-label", "Menu de navigation");
+    drawer.innerHTML =
+      '<div class="mob-drawer-header">'
+      + '<a href="index.html" class="mob-drawer-logo">'
+      + '<img src="assets/images/aeg.jpg" alt="AEG-UM6SS" />'
+      + '<span>AEG-UM6SS</span>'
+      + '</a>'
+      + '<button class="mob-drawer-close" aria-label="Fermer le menu">'
+      + '<i class="fas fa-xmark"></i>'
+      + '</button>'
+      + '</div>'
+      + '<ul class="mob-drawer-nav">' + linksHTML + '</ul>'
+      + '<div class="mob-drawer-footer">'
+      + '<p class="mob-follow-label">Suivez-nous</p>'
+      + '<div class="mob-social-links">'
+      + '<a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>'
+      + '<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>'
+      + '<a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>'
+      + '</div>'
+      + '<p class="mob-drawer-copy">&copy; ' + new Date().getFullYear() + ' AEG-UM6SS</p>'
+      + '</div>';
+
+    /* Injecté directement dans <body> — aucun stacking context parent */
+    document.body.appendChild(drawer);
+
+    /* Overlay */
     const overlay = document.createElement("div");
     overlay.className = "nav-overlay";
     document.body.appendChild(overlay);
 
     const icon = navSwitch.querySelector("i");
+    navSwitch.setAttribute("role", "button");
+    navSwitch.setAttribute("aria-expanded", "false");
+    navSwitch.setAttribute("aria-label", "Ouvrir le menu");
+    navSwitch.setAttribute("tabindex", "0");
 
     function openMenu() {
-      mainMenu.classList.add("active");
+      drawer.classList.add("open");
       navSwitch.classList.add("active");
       navSwitch.setAttribute("aria-expanded", "true");
-      navSwitch.setAttribute("aria-label", "Fermer le menu");
       overlay.classList.add("active");
       document.body.classList.add("menu-open");
-      if (icon) {
-        icon.classList.remove("fa-bars");
-        icon.classList.add("fa-times");
-      }
+      if (icon) { icon.classList.replace("fa-bars", "fa-xmark") || (icon.className = "fas fa-xmark"); }
+      const firstLink = drawer.querySelector(".mob-drawer-nav a");
+      if (firstLink) setTimeout(function () { firstLink.focus(); }, 50);
     }
 
     function closeMenu() {
-      mainMenu.classList.remove("active");
+      drawer.classList.remove("open");
       navSwitch.classList.remove("active");
       navSwitch.setAttribute("aria-expanded", "false");
-      navSwitch.setAttribute("aria-label", "Menu de navigation");
       overlay.classList.remove("active");
       document.body.classList.remove("menu-open");
-      if (icon) {
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-      }
+      if (icon) { icon.classList.replace("fa-xmark", "fa-bars") || (icon.className = "fa fa-bars"); }
     }
 
     navSwitch.addEventListener("click", function () {
-      mainMenu.classList.contains("active") ? closeMenu() : openMenu();
+      drawer.classList.contains("open") ? closeMenu() : openMenu();
     });
-
-    // Fermer au clic sur l'overlay
-    overlay.addEventListener("click", closeMenu);
-
-    // Fermer quand on clique sur un lien
-    mainMenu.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        if (window.innerWidth < 992) closeMenu();
-      });
-    });
-
-    // Fermer au passage en mode desktop
-    window.addEventListener("resize", function () {
-      if (window.innerWidth >= 992) closeMenu();
-    });
-
-    // Accessibilité clavier
     navSwitch.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        mainMenu.classList.contains("active") ? closeMenu() : openMenu();
+        drawer.classList.contains("open") ? closeMenu() : openMenu();
       }
+    });
+
+    drawer.querySelector(".mob-drawer-close").addEventListener("click", closeMenu);
+    overlay.addEventListener("click", closeMenu);
+
+    drawer.querySelectorAll(".mob-drawer-nav a").forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && drawer.classList.contains("open")) closeMenu();
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth >= 992) closeMenu();
     });
   }
 
@@ -167,6 +232,78 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  // ── CTA flottant mobile : apparaît après scroll ──────────────
+  function initFloatingCTA() {
+    const cta = document.getElementById("floating-cta");
+    if (!cta) return;
+
+    let lastScrollY = 0;
+    const SHOW_AFTER = 500; // px
+
+    function checkScroll() {
+      const currentY = window.scrollY;
+      if (currentY > SHOW_AFTER && currentY > lastScrollY) {
+        cta.classList.add("visible");
+      } else if (currentY < SHOW_AFTER / 2) {
+        cta.classList.remove("visible");
+      }
+      lastScrollY = currentY;
+    }
+
+    let ticking = false;
+    window.addEventListener("scroll", function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          checkScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  // ── Compteurs animés (chiffres qui augmentent) ──────────────
+  function initAnimatedCounters() {
+    const counters = document.querySelectorAll(".fact-text h2");
+    if (!counters.length) return;
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const text = el.textContent.trim();
+          const prefix = text.replace(/[0-9]/g, '').replace(/\+/g, '');
+          const hasPlus = text.includes('+');
+          const num = parseInt(text.replace(/[^0-9]/g, ''), 10);
+          if (isNaN(num)) return;
+
+          let start = 0;
+          const duration = 2000;
+          const startTime = performance.now();
+
+          function animate(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const current = Math.round(eased * num);
+            el.textContent = (hasPlus ? '+' : '') + current + prefix;
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            }
+          }
+
+          requestAnimationFrame(animate);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    counters.forEach(function(counter) {
+      observer.observe(counter);
+    });
   }
 
   // ── Animations au scroll : IntersectionObserver + stagger ──────────────
@@ -296,13 +433,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (newsletterForm) {
       newsletterForm.addEventListener("submit", function (e) {
         e.preventDefault();
-        const email = this.querySelector('input[type="text"]').value;
+        const emailInput = this.querySelector('input[type="email"]') || this.querySelector('input[type="text"]');
+        const email = emailInput ? emailInput.value : '';
 
         if (validateEmail(email)) {
           // Simulation d'envoi
-          this.querySelector('input[type="text"]').value = "";
+          if (emailInput) emailInput.value = "";
           showNotification(
-            "Merci pour votre inscription à notre newsletter!",
+            "Merci pour votre inscription ! Vous recevrez bientôt nos actualités.",
             "success",
           );
         } else {
@@ -413,6 +551,8 @@ document.addEventListener("DOMContentLoaded", function () {
     initMobileMenu();
     initEventCounter();
     initNavbarScroll();
+    initFloatingCTA();
+    initAnimatedCounters();
     initRevealAnimations();
     initGallery();
     initNewsletterForm();
