@@ -2,7 +2,8 @@ backend:
   name: github
   repo: Dan-tech1/AEG-UM6SS
   branch: main
-  base_url: https://phenomenal-dodol-901c07.netlify.app
+  base_url: https://www.aeg-um6ss.online
+  auth_endpoint: api/auth
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
