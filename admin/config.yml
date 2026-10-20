@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Dan-tech1/AEG-UM6SS
   branch: main
-  base_url: https://arduino4.netlify.app
+  base_url: https://phenomenal-dodol-901c07.netlify.app
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
