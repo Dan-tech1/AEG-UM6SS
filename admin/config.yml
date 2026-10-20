@@ -1,0 +1,175 @@
+# =====================================================
+#   Decap CMS — Configuration AEG-UM6SS
+#   Dépôt : https://github.com/Dan-tech1/AEG-UM6SS
+# =====================================================
+
+# --- Paramètres du backend Git (GitHub) ---
+backend:
+  name: github
+  repo: Dan-tech1/AEG-UM6SS        # Votre dépôt GitHub
+  branch: main                      # Branche principale
+  base_url: https://arduino4.netlify.app  # URL de votre site Vercel
+
+# --- Stockage des médias ---
+media_folder: "assets/uploads"      # Où les images uploadées sont stockées
+public_folder: "/assets/uploads"    # URL publique des médias
+
+# --- Langue de l'interface ---
+locale: fr
+
+# --- Activation du workflow éditorial (brouillons) ---
+publish_mode: editorial_workflow
+
+# =====================================================
+#   COLLECTIONS
+# =====================================================
+collections:
+
+  # --------------------------------------------------
+  # 1. BLOG / ACTUALITÉS
+  # --------------------------------------------------
+  - name: "blog"
+    label: "📰 Blog & Actualités"
+    label_singular: "Article"
+    folder: "data/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: json
+    fields:
+      - { label: "Titre", name: "title", widget: "string", required: true }
+      - { label: "Date de publication", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: "Auteur", name: "author", widget: "string", default: "Communication" }
+      - label: "Catégorie"
+        name: "category"
+        widget: "select"
+        options:
+          - "Vie Associative"
+          - "Académique"
+          - "Académique/Partenariat"
+          - "Académique/formation"
+          - "Culture"
+          - "Santé"
+          - "International"
+      - { label: "Résumé (extrait)", name: "summary", widget: "text", hint: "Court résumé affiché sur la liste des articles" }
+      - { label: "Contenu complet", name: "content", widget: "markdown", required: false }
+      - { label: "Image principale", name: "image", widget: "image", required: false }
+
+  # --------------------------------------------------
+  # 2. ÉVÉNEMENTS
+  # --------------------------------------------------
+  - name: "events"
+    label: "🗓️ Événements"
+    label_singular: "Événement"
+    folder: "data/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: json
+    fields:
+      - { label: "Titre", name: "title", widget: "string", required: true }
+      - { label: "Date", name: "date", widget: "string", hint: "Ex : 2026-03-15 ou Samedi 15 Mars 2026" }
+      - { label: "Heure", name: "time", widget: "string", hint: "Ex : 09:00 - 17:00" }
+      - { label: "Lieu", name: "location", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - label: "Catégorie"
+        name: "category"
+        widget: "select"
+        options:
+          - "Académique/formation"
+          - "Vie Associative"
+          - "Culture"
+          - "Santé"
+          - "International"
+      - label: "Prix / Statut"
+        name: "price"
+        widget: "select"
+        options:
+          - "Gratuit"
+          - "Payant"
+          - "terminé"
+          - "À venir"
+      - { label: "Info prix (ex: /participant)", name: "priceFor", widget: "string", required: false }
+
+  # --------------------------------------------------
+  # 3. ÉQUIPE / BUREAU DIRECTEUR
+  # --------------------------------------------------
+  - name: "team"
+    label: "👥 Équipe & Bureau"
+    label_singular: "Membre"
+    folder: "data/team"
+    create: true
+    slug: "{{name}}"
+    format: json
+    fields:
+      - { label: "Nom complet", name: "name", widget: "string", required: true }
+      - { label: "Poste / Fonction", name: "position", widget: "string" }
+      - { label: "Photo", name: "image", widget: "image", required: false }
+      - { label: "Description / Filière", name: "description", widget: "string" }
+
+  # --------------------------------------------------
+  # 4. ACTIVITÉS
+  # --------------------------------------------------
+  - name: "activities"
+    label: "🎯 Activités"
+    label_singular: "Activité"
+    folder: "data/activities"
+    create: true
+    slug: "{{slug}}"
+    format: json
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - label: "Catégorie"
+        name: "category"
+        widget: "select"
+        options:
+          - "Académique"
+          - "Social"
+          - "Culturel"
+          - "Humanitaire"
+          - "Sportif"
+
+  # --------------------------------------------------
+  # 5. PARTENAIRES
+  # --------------------------------------------------
+  - name: "partenaires"
+    label: "🤝 Partenaires"
+    label_singular: "Partenaire"
+    folder: "data/partenaires"
+    create: true
+    slug: "{{name}}"
+    format: json
+    fields:
+      - { label: "Nom du partenaire", name: "name", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image", required: false }
+      - { label: "Site web", name: "website", widget: "string", required: false }
+      - { label: "Description", name: "description", widget: "text", required: false }
+      - label: "Type de partenariat"
+        name: "type"
+        widget: "select"
+        options:
+          - "Académique"
+          - "Institutionnel"
+          - "Médical"
+          - "Culturel"
+          - "International"
+
+  # --------------------------------------------------
+  # 6. PARAMÈTRES DU SITE (Singleton)
+  # --------------------------------------------------
+  - name: "settings"
+    label: "⚙️ Paramètres du site"
+    files:
+      - name: "general"
+        label: "Informations générales"
+        file: "data/settings.json"
+        format: json
+        fields:
+          - { label: "Nom de l'association", name: "association_name", widget: "string", default: "AEG-UM6SS" }
+          - { label: "Slogan / Description courte", name: "tagline", widget: "string" }
+          - { label: "Email de contact", name: "email", widget: "string" }
+          - { label: "Téléphone", name: "phone", widget: "string", required: false }
+          - { label: "Lien Instagram", name: "instagram", widget: "string", required: false }
+          - { label: "Lien Facebook", name: "facebook", widget: "string", required: false }
+          - { label: "Lien WhatsApp", name: "whatsapp", widget: "string", required: false }
