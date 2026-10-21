@@ -5,10 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
   <title>AEG-UM6SS — Administration CMS</title>
-  <!-- Decap CMS -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
+  <style>
+    #cms-error {
+      display: none;
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 1.5rem;
+      max-width: 650px;
+      margin: 3rem auto;
+      border: 1px solid #f87171;
+      background: #fef2f2;
+      color: #991b1b;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    #cms-error pre {
+      white-space: pre-wrap;
+      word-break: break-all;
+      background: #fee2e2;
+      padding: 1rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      margin-top: 0.75rem;
+    }
+  </style>
 </head>
 <body>
-  <!-- Decap CMS monte ici automatiquement -->
+  <div id="cms-error">
+    <h3 style="margin-top: 0;">⚠️ Erreur de chargement Decap CMS</h3>
+    <p>Une erreur est survenue lors de l'initialisation du CMS :</p>
+    <pre id="cms-error-msg"></pre>
+  </div>
+  <script>
+    window.onerror = function(msg, url, lineNo, columnNo, error) {
+      var errDiv = document.getElementById('cms-error');
+      var errMsg = document.getElementById('cms-error-msg');
+      if (errDiv && errMsg) {
+        errDiv.style.display = 'block';
+        errMsg.innerText = (error && error.stack) ? error.stack : msg + '\nLigne: ' + lineNo;
+      }
+      return false;
+    };
+  </script>
+  <!-- Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
