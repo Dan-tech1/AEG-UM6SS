@@ -39,6 +39,16 @@
   ],
   "blog": [
     {
+      "id": 5,
+      "slug": "2026-10-21-texte-actu",
+      "author": "Communication",
+      "image": "assets/uploads/capture-d-écran-2026-09-13-161510.png",
+      "title": "texte actu",
+      "date": "2026-10-21",
+      "category": "Vie Associative",
+      "summary": "ergtrghreggrerg"
+    },
+    {
       "id": 1,
       "title": "l'AEG-UM6SS au contact des patients gabonais de l'hopital Universitaire international cheikh khalifa ",
       "date": "2026-01-02",
